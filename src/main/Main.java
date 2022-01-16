@@ -11,6 +11,7 @@ import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import servlets.admin.PartialServlet;
+import servlets.admin.api.APICategoryServlet;
 import servlets.admin.category.AddCategoryServlet;
 import servlets.admin.category.EditCategoryServlet;
 import servlets.admin.category.ManageCategoryServlet;
@@ -26,6 +27,9 @@ public class Main {
         context.addServlet(new ServletHolder(new ManageCategoryServlet()), "/admin/category");
         context.addServlet(new ServletHolder(new AddCategoryServlet()), "/admin/category/add");
         context.addServlet(new ServletHolder(new EditCategoryServlet()), "/admin/category/edit");
+
+        context.addServlet(new ServletHolder(new APICategoryServlet()), "/admin/api/category");
+
 //
 //        FilterHolder authenFilter = new FilterHolder(new AuthenFilter());
 //        authenFilter.setName("AuthenFilter");

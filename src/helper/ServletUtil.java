@@ -68,9 +68,9 @@ public class ServletUtil {
     private static final Pattern NONLATIN = Pattern.compile("[^\\w-]");
     private static final Pattern WHITESPACE = Pattern.compile("[\\s]");
 
-    public static String toSlug(String titleFilm) {
-        titleFilm = titleFilm.replace("Đ", "D").replace("đ", "d");
-        String nowhitespace = WHITESPACE.matcher(titleFilm).replaceAll("-");
+    public static String toSlug(String title) {
+        title = title.replace("Đ", "D").replace("đ", "d");
+        String nowhitespace = WHITESPACE.matcher(title).replaceAll("-");
         String normalized = Normalizer.normalize(nowhitespace, Normalizer.Form.NFD);
         String slug = NONLATIN.matcher(normalized).replaceAll("");
         slug = slug.replace("---", "-").replace("--", "-");
