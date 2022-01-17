@@ -183,7 +183,6 @@ public class CategoryModel {
                 result.setCateNameSlug(rs.getString("cate_name_slug"));
 
                 result.setParentId(rs.getInt("id_parent"));
-                result.setParentName(rs.getString("cate_name_parent"));
 
                 result.setOrders(rs.getInt("orders"));
                 result.setStatus(rs.getInt("status"));
@@ -289,14 +288,6 @@ public class CategoryModel {
             addStmt.setString(7, System.currentTimeMillis() + "");
             addStmt.setString(8, System.currentTimeMillis() + "");
             int result = addStmt.executeUpdate();
-//            if (result > 0) {
-//                try (ResultSet rs = addStmt.getGeneratedKeys()) {
-//                    if (rs.next()) {
-//                        result = rs.getInt(1);
-//                    }
-//                    rs.close();
-//                }
-//            }
 
             return result;
         } catch (Exception e) {

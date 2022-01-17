@@ -27,6 +27,7 @@ public class APICategoryServlet extends HttpServlet {
                 int pageIndex = NumberUtils.toInt(request.getParameter("page_index"));
                 int limit = NumberUtils.toInt(request.getParameter("limit"), 10);
                 String searchQuery = request.getParameter("search_query");
+                int searchCate = NumberUtils.toInt(request.getParameter("search_cate"));
                 int searchStatus = NumberUtils.toInt(request.getParameter("search_status"));
                 int searchProperty = NumberUtils.toInt(request.getParameter("search_property"));
                 int offset = (pageIndex - 1) * limit;
@@ -37,6 +38,7 @@ public class APICategoryServlet extends HttpServlet {
                 filterCategory.setSearchProperty(searchProperty);
                 filterCategory.setSearchQuery(searchQuery);
                 filterCategory.setStatus(searchStatus);
+                filterCategory.setSearchCategory(searchCate);
 
                 List<Category> sliceCategory = CategoryModel.INSTANCE.getSliceCategory(filterCategory);
                 int totalCategory = CategoryModel.INSTANCE.getTotalCategory(filterCategory);
@@ -111,30 +113,45 @@ public class APICategoryServlet extends HttpServlet {
                 }
                 break;
             }
-//            case "edit": {
-//                int id = NumberUtils.toInt(request.getParameter("id"));
-//                String name = request.getParameter("name");
-//                int status = NumberUtils.toInt(request.getParameter("status"));
-//
-//                CategoryFilm cateFilmById = CategoryFilmModel.INSTANCE.getCategoryFilmByID(id);
-//                if (cateFilmById.getId() == 0) {
-//                    result.setErrorCode(-1);
-//                    result.setMessage("Thất bại!");
-//                    return;
-//                }
-//
-//                int editCateFilm = CategoryFilmModel.INSTANCE.editCategoryFilm(id, name, status);
-//
-//                if (editCateFilm >= 0) {
-//                    result.setErrorCode(0);
-//                    result.setMessage("Sửa category film thành công!");
-//                } else {
-//                    result.setErrorCode(-1);
-//                    result.setMessage("Sửa category film thất bại!");
-//                }
-//                break;
-//            }
-//
+            case "edit": {
+                int id = NumberUtils.toInt(request.getParameter("id"));
+                String cateName = request.getParameter("cate_name");
+                String cateNameSlug = request.getParameter("cate_name_slug");
+
+                int idParent = NumberUtils.toInt(request.getParameter("id_parent"));
+                int orders = NumberUtils.toInt(request.getParameter("orders"));
+                int property = NumberUtils.toInt(request.getParameter("property"));
+                int status = NumberUtils.toInt(request.getParameter("status"));
+
+                Category category = new Category();
+                category.setId(id);
+                category.setCateName(cateName);
+                category.setParentId(idParent);
+                category.setCateNameSlug(cateNameSlug);
+                category.setOrders(orders);
+                category.setProperty(property);
+                category.setStatus(status);
+
+                Category categoryByID = CategoryModel.INSTANCE.getCategoryByID(id);
+
+                if (categoryByID.getId() == 0) {
+                    result.setErrorCode(-1);
+                    result.setMessage("Thất bại!");
+                    return;
+                }
+
+                int editCategory = CategoryModel.INSTANCE.editCategory(category);
+
+                if (editCategory >= 0) {
+                    result.setErrorCode(0);
+                    result.setMessage("Sửa category thành công!");
+                } else {
+                    result.setErrorCode(-1);
+                    result.setMessage("Sửa category thất bại!");
+                }
+                break;
+            }
+
 //            case "delete": {
 //                int id = NumberUtils.toInt(request.getParameter("id"));
 //                int deleteCateFilm = CategoryFilmModel.INSTANCE.deleteCategoryFilm(id);

@@ -273,3 +273,375 @@
 2022-01-17 06:45:07 DEBUG cache:83 - "templates/admin/category/add_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/add_category.html didn't change.
 2022-01-17 06:45:08 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642303659956 != file lastModified=1642376680938
 2022-01-17 06:45:08 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/menu.html"
+2022-01-17 06:45:41 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 06:45:41 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 06:45:41 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-17 06:45:41 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:12:40 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:12:40 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:12:40 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642303756170 != file lastModified=1642378358258
+2022-01-17 07:12:40 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:12:41 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:13:39 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:13:39 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:13:39 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378358258 != file lastModified=1642378416896
+2022-01-17 07:13:39 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:13:40 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:14:07 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:14:07 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:14:07 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378416896 != file lastModified=1642378445987
+2022-01-17 07:14:07 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:14:07 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:14:25 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:14:25 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:14:25 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378445987 != file lastModified=1642378463518
+2022-01-17 07:14:25 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:14:25 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:15:32 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:15:32 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:15:32 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378463518 != file lastModified=1642378530376
+2022-01-17 07:15:32 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:15:32 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:15:44 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:15:44 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:15:44 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378530376 != file lastModified=1642378542471
+2022-01-17 07:15:44 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:15:44 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:15:52 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:15:52 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:15:52 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378542471 != file lastModified=1642378550911
+2022-01-17 07:15:52 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:15:52 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:17:22 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:17:22 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:17:22 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378550911 != file lastModified=1642378641110
+2022-01-17 07:17:22 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:17:23 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:17:59 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:17:59 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:17:59 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378641110 != file lastModified=1642378676943
+2022-01-17 07:17:59 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:17:59 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:18:27 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:18:27 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:18:27 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642376611452 != file lastModified=1642377020432
+2022-01-17 07:18:27 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/add_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/add_category.html"
+2022-01-17 07:18:27 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:19:02 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:19:02 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:19:02 DEBUG cache:83 - "templates/admin/category/add_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/add_category.html didn't change.
+2022-01-17 07:19:02 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642376680938 != file lastModified=1642378736698
+2022-01-17 07:19:02 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/menu.html"
+2022-01-17 07:19:04 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 07:19:04 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 07:19:04 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-17 07:19:04 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 07:20:17 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:20:17 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:20:17 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378676943 != file lastModified=1642378815724
+2022-01-17 07:20:17 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:20:18 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:20:42 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:20:42 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:20:42 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378815724 != file lastModified=1642378840555
+2022-01-17 07:20:42 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:20:42 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:21:09 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:21:09 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:21:09 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378840555 != file lastModified=1642378867638
+2022-01-17 07:21:09 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:21:09 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:21:28 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:21:28 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:21:28 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378867638 != file lastModified=1642378886076
+2022-01-17 07:21:28 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:21:28 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:22:09 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:22:09 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:22:09 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378886076 != file lastModified=1642378926731
+2022-01-17 07:22:09 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:22:10 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:22:24 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:22:24 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:22:24 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378926731 != file lastModified=1642378942149
+2022-01-17 07:22:24 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:22:24 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:22:35 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:22:35 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:22:35 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378942149 != file lastModified=1642378953938
+2022-01-17 07:22:35 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:22:36 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:22:43 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:22:43 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:22:43 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378953938 != file lastModified=1642378961802
+2022-01-17 07:22:43 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:22:43 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:27:22 ERROR CategoryModel:109 - Column 'cate_name' in where clause is ambiguous
+2022-01-17 07:36:49 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:36:49 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:36:49 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642378961802 != file lastModified=1642379793934
+2022-01-17 07:36:49 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:36:49 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:37:47 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:37:47 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:37:47 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642379793934 != file lastModified=1642379865668
+2022-01-17 07:37:47 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:37:48 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:38:08 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:38:08 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:38:08 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642379865668 != file lastModified=1642379885856
+2022-01-17 07:38:08 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:38:08 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:38:23 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:38:23 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:38:23 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642379885856 != file lastModified=1642379901221
+2022-01-17 07:38:23 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:38:23 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:38:35 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:38:35 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:38:35 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642379901221 != file lastModified=1642379913997
+2022-01-17 07:38:35 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:38:36 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:38:42 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:38:42 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:38:42 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642379913997 != file lastModified=1642379920601
+2022-01-17 07:38:42 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:38:42 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:38:50 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:38:50 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:38:50 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642379920601 != file lastModified=1642379928153
+2022-01-17 07:38:50 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:38:50 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:38:58 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:38:58 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:38:58 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642379928153 != file lastModified=1642379936714
+2022-01-17 07:38:58 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:38:58 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:39:04 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:39:04 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:39:04 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642379936714 != file lastModified=1642379943146
+2022-01-17 07:39:04 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:39:05 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:42:08 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:42:08 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:42:08 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642379943146 != file lastModified=1642380029901
+2022-01-17 07:42:08 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 07:42:09 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:42:10 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 07:42:10 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 07:42:10 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/edit_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 07:42:10 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 07:44:44 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:44:44 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:44:44 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642303220461 != file lastModified=1642380280928
+2022-01-17 07:44:44 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 07:45:28 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:45:28 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:45:28 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642380280928 != file lastModified=1642380324843
+2022-01-17 07:45:28 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 07:45:28 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 07:52:58 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 07:52:58 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 07:52:58 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642380324843 != file lastModified=1642380771258
+2022-01-17 07:52:58 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 07:52:58 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:22:29 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/header.html"["en_US",UTF-8,parsed] ]
+2022-01-17 08:22:29 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/header.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/header.html"
+2022-01-17 08:22:29 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/footer.html"["en_US",UTF-8,parsed] ]
+2022-01-17 08:22:29 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/footer.html"
+2022-01-17 08:22:29 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/edit_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 08:22:29 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 08:22:30 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/menu.html"["en_US",UTF-8,parsed] ]
+2022-01-17 08:22:30 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/menu.html"
+2022-01-17 08:23:31 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:23:31 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:23:31 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-17 08:23:31 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:23:40 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:23:40 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:23:40 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-17 08:23:41 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:23:50 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:23:50 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:23:50 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-17 08:23:51 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:24:50 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:24:50 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:24:50 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/manage_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 08:24:50 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 08:24:51 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:24:55 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:24:55 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:24:55 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-17 08:24:56 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:24:56 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 08:25:27 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:25:27 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:25:27 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-17 08:25:28 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 08:25:28 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:26:21 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:26:21 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:26:21 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642382500305 != file lastModified=1642382779235
+2022-01-17 08:26:21 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 08:26:21 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 08:26:21 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:28:47 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:28:47 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:28:47 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642382779235 != file lastModified=1642382902990
+2022-01-17 08:28:47 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 08:28:47 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 08:28:47 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:31:46 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:31:46 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:31:46 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-17 08:31:46 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 08:31:46 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:32:14 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:32:14 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:32:14 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642382902990 != file lastModified=1642383129591
+2022-01-17 08:32:14 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 08:32:14 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 08:32:15 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:33:33 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:33:33 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:33:33 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642383129591 != file lastModified=1642383212033
+2022-01-17 08:33:33 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 08:33:34 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 08:33:34 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:34:24 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 08:34:24 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:34:24 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:34:24 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-17 08:34:25 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:34:35 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:34:35 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:34:35 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-17 08:34:35 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 08:34:35 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 08:34:46 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 08:34:46 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 08:34:46 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 08:34:46 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-17 08:34:47 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 10:38:30 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/header.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:38:30 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/header.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/header.html"
+2022-01-17 10:38:30 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/footer.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:38:30 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/footer.html"
+2022-01-17 10:38:30 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/manage_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:38:30 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 10:38:30 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/menu.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:38:30 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/menu.html"
+2022-01-17 10:38:34 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 10:38:34 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 10:38:34 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/edit_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:38:34 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 10:38:35 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 10:38:35 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 10:42:52 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 10:42:52 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 10:42:52 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-17 10:42:53 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 10:42:55 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 10:42:55 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 10:42:55 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642390594126 != file lastModified=1642390967500
+2022-01-17 10:42:55 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 10:42:56 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 10:42:56 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 10:44:30 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 10:44:30 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 10:44:30 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-17 10:44:31 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 10:44:33 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 10:44:33 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 10:44:33 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642390967500 != file lastModified=1642391068504
+2022-01-17 10:44:33 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 10:44:34 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 10:44:34 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 10:47:14 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 10:47:14 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 10:47:14 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642391068504 != file lastModified=1642391232123
+2022-01-17 10:47:14 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 10:47:15 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 10:47:15 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 10:48:21 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 10:48:21 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 10:48:21 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642391232123 != file lastModified=1642391299685
+2022-01-17 10:48:21 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 10:48:22 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 10:48:22 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 10:48:33 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 10:48:33 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 10:48:33 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642391299685 != file lastModified=1642391311725
+2022-01-17 10:48:33 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 10:48:34 ERROR CategoryModel:205 - Column 'cate_name_parent' not found.
+2022-01-17 10:48:34 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 10:50:07 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/header.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:50:07 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/header.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/header.html"
+2022-01-17 10:50:07 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/footer.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:50:07 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/footer.html"
+2022-01-17 10:50:07 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/edit_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:50:07 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 10:50:08 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/menu.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:50:08 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/menu.html"
+2022-01-17 10:51:38 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/header.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:51:38 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/header.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/header.html"
+2022-01-17 10:51:38 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/footer.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:51:38 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/footer.html"
+2022-01-17 10:51:38 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/edit_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:51:38 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 10:51:39 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/menu.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:51:39 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/menu.html"
+2022-01-17 10:52:15 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 10:52:15 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 10:52:15 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642391382639 != file lastModified=1642391532293
+2022-01-17 10:52:15 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 10:52:15 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 10:52:42 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 10:52:42 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 10:52:42 DEBUG cache:83 - Updating source, info for cause: lastModifiedNotChanged=false, cache lastModified=1642391532293 != file lastModified=1642391557832
+2022-01-17 10:52:42 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 10:52:42 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 10:53:10 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 10:53:10 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 10:53:10 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/manage_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 10:53:10 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 10:53:10 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 10:55:48 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 10:55:48 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 10:55:48 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-17 10:55:49 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 11:33:02 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/header.html"["en_US",UTF-8,parsed] ]
+2022-01-17 11:33:02 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/header.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/header.html"
+2022-01-17 11:33:02 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/footer.html"["en_US",UTF-8,parsed] ]
+2022-01-17 11:33:02 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/footer.html"
+2022-01-17 11:33:02 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/manage_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 11:33:02 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 11:33:02 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/menu.html"["en_US",UTF-8,parsed] ]
+2022-01-17 11:33:02 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/menu.html"
+2022-01-17 11:33:29 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 11:33:29 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 11:33:29 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/edit_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 11:33:29 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 11:33:29 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 12:15:21 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/header.html"["en_US",UTF-8,parsed] ]
+2022-01-17 12:15:21 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/header.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/header.html"
+2022-01-17 12:15:21 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/footer.html"["en_US",UTF-8,parsed] ]
+2022-01-17 12:15:21 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/footer.html"
+2022-01-17 12:15:21 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/manage_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 12:15:21 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-17 12:15:22 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/menu.html"["en_US",UTF-8,parsed] ]
+2022-01-17 12:15:22 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/menu.html"
+2022-01-17 12:33:14 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 12:33:14 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 12:33:14 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-17 12:33:14 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-17 12:33:16 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 12:33:16 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 12:33:16 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/edit_category.html"["en_US",UTF-8,parsed] ]
+2022-01-17 12:33:16 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-17 12:33:17 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-17 12:33:31 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-17 12:33:31 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-17 12:33:31 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-17 12:33:32 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
