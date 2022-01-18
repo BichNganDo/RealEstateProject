@@ -156,11 +156,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 console.log($scope.id_parent);
                 console.log($scope.orders);
                 console.log($scope.status);
-                if($scope.status == 0){
-                    $scope.msg = 'Please Select Dropdown Value';
-                } else {
-                    $scope.msg = '';
-                }
                 if ($scope.cate_name && $scope.status > 0) {
                     let property = 0;
                     if ($scope.hot) {
