@@ -185,13 +185,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     }
                     $http.post($scope.APP_DOMAIN + 'admin/api/category?action=add', data, config)
                         .then(function(response) {
-                            $scope.cate_name = "Category Name";
-                            $scope.id_parent = "0";
-                            $scope.orders = "";
-                            $scope.status = "Choose the status";
-                            $scope.hot = false;
-                            $scope.new = false;
-                            showNotification("success", response.data.message);
+                            if (response.data.errorCode < 0) {
+                                showNotification("error", response.data.message);
+                            } else {
+                                showNotification("success", response.data.message);
+                                window.location.replace($scope.APP_DOMAIN + "admin/category");
+                            
+                            }
 
                         }, function(error) {
                             showNotification("error", error.data.message);

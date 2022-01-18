@@ -269,7 +269,7 @@ public class CategoryModel {
 
     }
 
-    public boolean isExistCateNameSlug(String cateNameSlug) {
+    public boolean isExistCateNameSlug(int id, String cateNameSlug) {
         Connection conn = null;
         try {
             conn = dbClient.getDbConnection();
@@ -277,8 +277,9 @@ public class CategoryModel {
                 return false;
             }
 
-            PreparedStatement isExistCateNameSlugStmt = conn.prepareStatement("SELECT * FROM `" + NAMETABLE + "` WHERE `cate_name_slug` = ?");
+            PreparedStatement isExistCateNameSlugStmt = conn.prepareStatement("SELECT * FROM `" + NAMETABLE + "` WHERE `cate_name_slug` = ? AND `id` <> ?");
             isExistCateNameSlugStmt.setString(1, cateNameSlug);
+            isExistCateNameSlugStmt.setInt(2, id);
 
             ResultSet rs = isExistCateNameSlugStmt.executeQuery();
             if (rs.next()) {
@@ -297,7 +298,7 @@ public class CategoryModel {
 
     public int addCategory(Category category) {
         Connection conn = null;
-        boolean existCateNameSlug = INSTANCE.isExistCateNameSlug(category.getCateNameSlug());
+        boolean existCateNameSlug = INSTANCE.isExistCateNameSlug(0, category.getCateNameSlug());
         if (existCateNameSlug == true) {
             return ErrorCode.EXIST.getValue();
         }

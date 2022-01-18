@@ -101,7 +101,7 @@ public class APICategoryServlet extends HttpServlet {
                 category.setProperty(property);
                 category.setStatus(status);
 
-                boolean existCateNameSlug = CategoryModel.INSTANCE.isExistCateNameSlug(cateNameSlug);
+                boolean existCateNameSlug = CategoryModel.INSTANCE.isExistCateNameSlug(0, cateNameSlug);
                 if (existCateNameSlug == true) {
                     result.setErrorCode(-4);
                     result.setMessage("Category Name Slug đã tồn tại");
@@ -145,7 +145,7 @@ public class APICategoryServlet extends HttpServlet {
                     return;
                 }
 
-                boolean existCateNameSlug = CategoryModel.INSTANCE.isExistCateNameSlug(cateNameSlug);
+                boolean existCateNameSlug = CategoryModel.INSTANCE.isExistCateNameSlug(id, cateNameSlug);
                 if (existCateNameSlug == true) {
                     result.setErrorCode(-4);
                     result.setMessage("Category Name Slug đã tồn tại");
