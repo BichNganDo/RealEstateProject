@@ -28,7 +28,6 @@ public class APICategoryServlet extends HttpServlet {
                 int pageIndex = NumberUtils.toInt(request.getParameter("page_index"));
                 int limit = NumberUtils.toInt(request.getParameter("limit"), 10);
                 String searchQuery = request.getParameter("search_query");
-                int searchCate = NumberUtils.toInt(request.getParameter("search_cate"));
                 int searchStatus = NumberUtils.toInt(request.getParameter("search_status"));
                 int searchProperty = NumberUtils.toInt(request.getParameter("search_property"));
                 int offset = (pageIndex - 1) * limit;
@@ -39,7 +38,6 @@ public class APICategoryServlet extends HttpServlet {
                 filterCategory.setSearchProperty(searchProperty);
                 filterCategory.setSearchQuery(searchQuery);
                 filterCategory.setStatus(searchStatus);
-                filterCategory.setSearchCategory(searchCate);
 
                 List<Category> sliceCategory = CategoryModel.INSTANCE.getSliceCategory(filterCategory);
                 int totalCategory = CategoryModel.INSTANCE.getTotalCategory(filterCategory);
@@ -103,15 +101,21 @@ public class APICategoryServlet extends HttpServlet {
                 category.setProperty(property);
                 category.setStatus(status);
 
-                int addCategory = CategoryModel.INSTANCE.addCategory(category);
-
-                if (addCategory >= 0) {
-                    result.setErrorCode(0);
-                    result.setMessage("Thêm Category thành công!");
+                boolean existCateNameSlug = CategoryModel.INSTANCE.isExistCateNameSlug(cateNameSlug);
+                if (existCateNameSlug == true) {
+                    result.setErrorCode(-4);
+                    result.setMessage("Category Name Slug đã tồn tại");
                 } else {
-                    result.setErrorCode(-1);
-                    result.setMessage("Thêm Category thất bại!");
+                    int addCategory = CategoryModel.INSTANCE.addCategory(category);
+                    if (addCategory >= 0) {
+                        result.setErrorCode(0);
+                        result.setMessage("Thêm Category thành công!");
+                    } else {
+                        result.setErrorCode(-1);
+                        result.setMessage("Thêm Category thất bại!");
+                    }
                 }
+
                 break;
             }
             case "edit": {
@@ -132,6 +136,7 @@ public class APICategoryServlet extends HttpServlet {
                 category.setProperty(property);
                 category.setStatus(status);
 
+
                 Category categoryByID = CategoryModel.INSTANCE.getCategoryByID(id);
 
                 if (categoryByID.getId() == 0) {
@@ -140,15 +145,21 @@ public class APICategoryServlet extends HttpServlet {
                     return;
                 }
 
-                int editCategory = CategoryModel.INSTANCE.editCategory(category);
-
-                if (editCategory >= 0) {
-                    result.setErrorCode(0);
-                    result.setMessage("Sửa category thành công!");
+                boolean existCateNameSlug = CategoryModel.INSTANCE.isExistCateNameSlug(cateNameSlug);
+                if (existCateNameSlug == true) {
+                    result.setErrorCode(-4);
+                    result.setMessage("Category Name Slug đã tồn tại");
                 } else {
-                    result.setErrorCode(-1);
-                    result.setMessage("Sửa category thất bại!");
+                    int editCategory = CategoryModel.INSTANCE.editCategory(category);
+                    if (editCategory >= 0) {
+                        result.setErrorCode(0);
+                        result.setMessage("Sửa category thành công!");
+                    } else {
+                        result.setErrorCode(-1);
+                        result.setMessage("Sửa category thất bại!");
+                    }
                 }
+
                 break;
             }
 

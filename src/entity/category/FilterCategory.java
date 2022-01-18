@@ -6,7 +6,6 @@ public class FilterCategory {
     private int limit;
     private String searchQuery;
     private int searchProperty;
-    private int searchCategory;
     private int status;
 
     public FilterCategory() {
@@ -42,14 +41,6 @@ public class FilterCategory {
 
     public void setSearchProperty(int searchProperty) {
         this.searchProperty = searchProperty;
-    }
-
-    public int getSearchCategory() {
-        return searchCategory;
-    }
-
-    public void setSearchCategory(int searchCategory) {
-        this.searchCategory = searchCategory;
     }
 
     public int getStatus() {

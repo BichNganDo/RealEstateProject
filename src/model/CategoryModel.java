@@ -43,15 +43,15 @@ public class CategoryModel {
                     + " WHERE 1=1";
 
             if (StringUtils.isNotEmpty(filterCategory.getSearchQuery())) {
-                sql = sql + " AND cate_name LIKE ? ";
+                sql = sql + " AND c.cate_name LIKE ? ";
             }
 
             if (filterCategory.getStatus() > 0) {
-                sql = sql + " AND status = ? ";
+                sql = sql + " AND c.status = ? ";
             }
 
             if (filterCategory.getSearchProperty() > 0) {
-                sql = sql + " AND property = ? ";
+                sql = sql + " AND c.property = ? ";
             }
 
             sql = sql + " ORDER BY `orders` DESC LIMIT ? OFFSET ? ";
@@ -62,6 +62,7 @@ public class CategoryModel {
             if (StringUtils.isNotEmpty(filterCategory.getSearchQuery())) {
                 ps.setString(param++, "%" + filterCategory.getSearchQuery() + "%");
             }
+
 
             if (filterCategory.getStatus() > 0) {
                 ps.setInt(param++, filterCategory.getStatus());
@@ -81,8 +82,8 @@ public class CategoryModel {
                 category.setId(rs.getInt("id"));
                 category.setCateName(rs.getString("cate_name"));
                 //Cate Name Slug
-                String cateNameSlug = ServletUtil.toSlug(category.getCateName());
-                category.setCateNameSlug(cateNameSlug);
+//                String cateNameSlug = ServletUtil.toSlug(category.getCateName());
+                category.setCateNameSlug(rs.getString("cate_name_slug"));
 
                 category.setParentId(rs.getInt("id_parent"));
                 category.setParentName(rs.getString("cate_name_parent"));

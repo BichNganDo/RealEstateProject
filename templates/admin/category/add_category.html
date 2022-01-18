@@ -185,10 +185,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     }
                     $http.post($scope.APP_DOMAIN + 'admin/api/category?action=add', data, config)
                         .then(function(response) {
-                            $scope.cate_name = "";
+                            $scope.cate_name = "Category Name";
                             $scope.id_parent = "0";
                             $scope.orders = "";
-                            $scope.status = "0";
+                            $scope.status = "Choose the status";
                             $scope.hot = false;
                             $scope.new = false;
                             showNotification("success", response.data.message);

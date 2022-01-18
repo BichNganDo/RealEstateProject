@@ -53,7 +53,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-3">
+                                <div class="col-sm-5">
                                     <div class="input-group">
                                         <input ng-model="search_query" type="text" name="search" class="form-control" placeholder="Search">
                                         <div class="input-group-append">
@@ -62,20 +62,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <div class="input-group">
-                                        <select ng-model="search_status" ng-change="getListCategory()"ng-init="search_status='0'" class="form-control">
+                                        <select ng-model="search_status" ng-change="getListCategory()" ng-init="search_status='0'" class="form-control">
                                             <option value="0">Filter status</option>
                                             <option value="1">Show</option>
                                             <option value="2">Hide</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="input-group">
-                                        <select ng-model="search_cate" ng-change="getListCategory()"ng-init="search_cate='0'" class="form-control">
-                                            <option value="0">Filter Category</option>
-                                            <option ng-repeat="item in listCategory" value="{{item.id}}">{{item.cateName}}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -83,11 +75,11 @@
                                     <div class="form-group" style="margin-top: 8px;">
                                         <div class="form-check">
                                             <div style="display: inline-block;padding-right: 30px;">
-                                                <input ng-model="hot" class="form-check-input" type="checkbox" ng-change="getListProduct()">
+                                                <input ng-model="hot" class="form-check-input" type="checkbox" ng-change="getListCategory()">
                                                 <label class="form-check-label">Hot</label>
                                             </div>
                                             <div style="display: inline-block; ">
-                                                <input ng-model="new" class="form-check-input" type="checkbox" ng-change="getListProduct()">
+                                                <input ng-model="new" class="form-check-input" type="checkbox" ng-change="getListCategory()">
                                                 <label class="form-check-label">New</label>
                                             </div>
                                         </div>
@@ -218,6 +210,9 @@
                 if ($scope.new) {
                     property = property + 2;
                 }
+                console.log($scope.search_query);
+                console.log($scope.search_status);
+                console.log(property);
                 $http({
                     method: "GET",
                     url: $scope.APP_DOMAIN + "admin/api/category",
@@ -227,7 +222,6 @@
                         limit: 10,
                         search_query: $scope.search_query,
                         search_status: $scope.search_status,
-                        search_cate: $scope.search_cate,
                         search_property: property
                     },
                 }).then(function(response) {
