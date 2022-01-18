@@ -119,19 +119,22 @@
                             <table class="table table-striped projects">
                                 <thead>
                                     <tr>
-                                        <th style="width: 5%">
+                                        <th style="width: 2%">
                                             Id
                                         </th>
-                                        <th style="width: 20%">
+                                        <th style="width: 15%">
                                             Category Name
+                                        </th>
+                                        <th style="width: 17%">
+                                            Category Name Slug
                                         </th>
                                         <th style="width: 10%">
                                             Parent ID
                                         </th>
-                                        <th style="width: 10%">
+                                        <th style="width: 5%">
                                             Orders
                                         </th>
-                                        <th style="width: 10%">
+                                        <th style="width: 7%">
                                             Status
                                         </th>
                                         <th style="width: 15%">
@@ -152,6 +155,7 @@
                                             <span ng-if="item.property.cateHot" class="badge badge-danger">Hot</span>
                                             <span ng-if="item.property.cateNew" class="badge badge-primary">New</span>
                                         </td>
+                                        <td>{{item.cateNameSlug}}  </td>
                                         <td>{{item.parentName}}</td>
                                         <td>{{item.orders}}</td>
                                         <td>
@@ -165,7 +169,7 @@
                                                 <i class="fas fa-pencil-alt">
                                                 </i> Edit
                                             </a>
-                                            <a class="btn btn-danger btn-sm" href="#" style="margin: 5px 5px">
+                                            <a ng-click="delete(item.id, item.cateName)" class="btn btn-danger btn-sm" href="#" style="margin: 5px 5px">
                                                 <i class="fas fa-trash">
                                                 </i> Delete
                                             </a>
@@ -222,6 +226,7 @@
                         page_index: $scope.selectedPageIndex,
                         limit: 10,
                         search_query: $scope.search_query,
+                        search_status: $scope.search_status,
                         search_cate: $scope.search_cate,
                         search_property: property
                     },
@@ -257,6 +262,30 @@
             }).then(function(response) {
                 $scope.listCategory = response.data.data.listCategory;
             })
+
+            //DELETE
+            $scope.delete = function(idDel, nameDel) {
+                var r = confirm("Bạn chắc chắn muốn xóa " + nameDel + " ?");
+                if (r == true) {
+                    var data = $.param({
+                        id: idDel
+                    });
+                    var config = {
+                        headers: {
+                            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                        }
+                    }
+                    $http.post('${app_domain}/admin/api/category?action=delete', data, config)
+                        .then(function(response) {
+                            // console.log(response);
+                            showNotification("success", response.data.message);
+                            $scope.getListCategory();
+                        }, function(error) {
+                            // console.log(error.data.message);
+                            showNotification("error", error.data.message);
+                        })
+                }
+            }
 
         });
     </script>

@@ -152,18 +152,18 @@ public class APICategoryServlet extends HttpServlet {
                 break;
             }
 
-//            case "delete": {
-//                int id = NumberUtils.toInt(request.getParameter("id"));
-//                int deleteCateFilm = CategoryFilmModel.INSTANCE.deleteCategoryFilm(id);
-//                if (deleteCateFilm >= 0) {
-//                    result.setErrorCode(0);
-//                    result.setMessage("Xóa category film thành công!");
-//                } else {
-//                    result.setErrorCode(-2);
-//                    result.setMessage("Xóa category film thất bại!");
-//                }
-//                break;
-//            }
+            case "delete": {
+                int id = NumberUtils.toInt(request.getParameter("id"));
+                int deleteCategory = CategoryModel.INSTANCE.deleteCategory(id);
+                if (deleteCategory >= 0) {
+                    result.setErrorCode(0);
+                    result.setMessage("Xóa category thành công!");
+                } else {
+                    result.setErrorCode(-2);
+                    result.setMessage("Xóa category thất bại!");
+                }
+                break;
+            }
             default:
                 throw new AssertionError();
         }
