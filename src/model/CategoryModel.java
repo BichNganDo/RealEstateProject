@@ -268,8 +268,38 @@ public class CategoryModel {
 
     }
 
+    public boolean isExistCateNameSlug(String cateNameSlug) {
+        Connection conn = null;
+        try {
+            conn = dbClient.getDbConnection();
+            if (null == conn) {
+                return false;
+            }
+
+            PreparedStatement isExistCateNameSlugStmt = conn.prepareStatement("SELECT * FROM `" + NAMETABLE + "` WHERE `cate_name_slug` = ?");
+            isExistCateNameSlugStmt.setString(1, cateNameSlug);
+
+            ResultSet rs = isExistCateNameSlugStmt.executeQuery();
+            if (rs.next()) {
+                return true;
+            }
+
+            return false;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        } finally {
+            dbClient.releaseDbConnection(conn);
+        }
+
+        return false;
+    }
+
     public int addCategory(Category category) {
         Connection conn = null;
+        boolean existCateNameSlug = INSTANCE.isExistCateNameSlug(category.getCateNameSlug());
+        if (existCateNameSlug == true) {
+            return ErrorCode.EXIST.getValue();
+        }
         try {
             conn = dbClient.getDbConnection();
             if (null == conn) {

@@ -10,7 +10,7 @@ package common;
  * @author Ngan Do
  */
 public enum ErrorCode {
-    SUCCESS(0), FAIL(-1), CONNECTION_FAIL(-2), NOT_EXIST(-3);
+    SUCCESS(0), FAIL(-1), CONNECTION_FAIL(-2), NOT_EXIST(-3), EXIST(-4);
 
     private int value;
 

@@ -5,6 +5,7 @@ import common.APIResult;
 import entity.category.Category;
 import entity.category.FilterCategory;
 import entity.category.ListCategory;
+import freemarker.template.utility.StringUtil;
 import helper.ServletUtil;
 import java.io.IOException;
 import java.util.List;
@@ -116,8 +117,7 @@ public class APICategoryServlet extends HttpServlet {
             case "edit": {
                 int id = NumberUtils.toInt(request.getParameter("id"));
                 String cateName = request.getParameter("cate_name");
-                String cateNameSlug = request.getParameter("cate_name_slug");
-
+                String cateNameSlug = ServletUtil.toSlug(request.getParameter("cate_name_slug"));
                 int idParent = NumberUtils.toInt(request.getParameter("id_parent"));
                 int orders = NumberUtils.toInt(request.getParameter("orders"));
                 int property = NumberUtils.toInt(request.getParameter("property"));

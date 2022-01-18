@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="form-group">
                                     <label>Category Name</label>
                                     <input ng-model="cate_name" name="cate_name" ng-required ="true"  type="text" class="form-control" placeholder="Category Name">
-                                    <span ng-show="formAddData.cate_name.$invalid" class="error-msg"> Dữ liệu không được để trống!
+                                    <span ng-show="formAddData.cate_name.$invalid && !formAddData.cate_name.$pristine" class="error-msg"> Dữ liệu không được để trống!</span>
                                 </div>
                                 <div class="form-group">
                                     <label>ID Parent</label>
@@ -84,8 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <div class="form-group">
                                     <label>Orders</label>
-                                    <input ng-model="orders" name="orders" ng-required ="true" type="number" class="form-control" placeholder="Orders">
-                                    <span ng-show="formAddData.orders.$invalid" class="error-msg"> Dữ liệu không được để trống!
+                                    <input ng-model="orders" type="number" class="form-control" placeholder="Orders">
                                 </div>
                                 <div class="form-group">
                                     <label>Status</label>
@@ -94,7 +93,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <option value="1">Show</option>
                                         <option value="2">Hide</option>
                                     </select>
-                                    <span class="error-msg"> {{msg}}
+                                    <span class="error-msg" ng-show="status == '0' && !formAddData.status.$pristine"> Dữ liệu không được để trống!</span>
                                 </div>
                                 <div class="form-group">
                                     <div class="form-check">
@@ -162,7 +161,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 } else {
                     $scope.msg = '';
                 }
-                if ($scope.cate_name && $scope.id_parent && $scope.orders && $scope.status > 0) {
+                if ($scope.cate_name && $scope.status > 0) {
                     let property = 0;
                     if ($scope.hot) {
                         property = property + 1;
