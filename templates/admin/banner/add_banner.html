@@ -8,6 +8,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <!-- REQUIRED HEADER -->
     ${header_include}
+    <style>
+        .error-msg {
+        font-size: 90%;
+        font-style: italic;
+        color: red;
+        }
+     </style>
 </head>
 
 
@@ -40,12 +47,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Add Category</h1>
+                            <h1 class="m-0">Add Banner</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Dashbroad</a></li>
-                                <li class="breadcrumb-item active">Manage Category </li>
+                                <li class="breadcrumb-item active">Manage Banner </li>
                             </ol>
                         </div>
                     </div>
@@ -61,22 +68,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <form name="formAddData">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label>Category Name</label>
-                                    <input ng-model="cate_name" name="cate_name" ng-required ="true"  type="text" class="form-control" placeholder="Category Name">
-                                    <span ng-show="formAddData.cate_name.$invalid && !formAddData.cate_name.$pristine" class="error-msg"> Dữ liệu không được để trống!</span>
+                                    <label>Banner Name</label>
+                                    <input ng-model="banner_name" name="banner_name" ng-required ="true"  type="text" class="form-control" placeholder="Banner Name">
+                                    <span ng-show="formAddData.banner_name.$invalid && !formAddData.banner_name.$pristine" class="error-msg"> Dữ liệu không được để trống!</span>
                                 </div>
                                 <div class="form-group">
-                                    <label>ID Parent</label>
-                                    <select ng-model="id_parent" ng-init="id_parent='0'" class="form-control">
-                                        <option value="0">Choose the ID Parent</option>
-                                        <!-- <option value="1"></option>
-                                        <option value="2"></option> -->
-                                        <option ng-repeat="item in listCategory " value="{{item.id}}">{{item.cateName}}</option>
+                                    <label>Action Link</label>
+                                    <input ng-model="action" name="action" ng-required ="true"  type="text" class="form-control" placeholder="Action">
+                                    <span ng-show="formAddData.action.$invalid && !formAddData.action.$pristine" class="error-msg"> Dữ liệu không được để trống!</span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Position</label>
+                                    <select ng-model="position" name="position" ng-select ="true"  ng-init="position='0'" class="form-control">
+                                        <option value="0">Choose the position</option>
+                                        <option value="1">Top</option>
+                                        <option value="2">Bottom</option>
+                                        <!-- <option ng-repeat="item in listCategory " value="{{item.id}}">{{item.cateName}}</option> -->
                                     </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Orders</label>
-                                    <input ng-model="orders" type="number" class="form-control" placeholder="Orders">
+                                    <span class="error-msg" ng-show="position == '0' && !formAddData.position.$pristine"> Dữ liệu không được để trống!</span>
                                 </div>
                                 <div class="form-group">
                                     <label>Status</label>
@@ -87,19 +96,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </select>
                                     <span class="error-msg" ng-show="status == '0' && !formAddData.status.$pristine"> Dữ liệu không được để trống!</span>
                                 </div>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input ng-model="hot" class="form-check-input" type="checkbox">
-                                        <label class="form-check-label"><b>Hot</b></label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input ng-model="new" class="form-check-input" type="checkbox">
-                                        <label class="form-check-label"><b>New</b></label>
-                                    </div>
+                                <div class="mb-3">
+                                    <label class="mb-2" style="color:black">Image</label><br>
+                                    <input accept="image/*" name="image" ng-required ="true" type='file' id="imgInp" style="color: black;"/>
+                                    <img class="mt-2" id="blah" onError="this.style.display = 'none';" src="#" alt="your image" style="display: block;" />
+                                    <span ng-show="formAddData.image.$invalid && !formAddData.image.$pristine" class="error-msg"> Dữ liệu không được để trống!</span>
                                 </div>
                                 <div>
                                     <button ng-click="addData()" type="submit" class="btn btn-primary">Submit</button>
                                 </div>
+                                
                             </div>
                         </form>
                     </div>
@@ -118,6 +124,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- REQUIRED SCRIPTS -->
 
     ${footer_include}
+    <script>
+        var app = angular.module('myApp', ['ngPagination']); //ngPagination
+       app.controller('mainCtrl', function($scope, $http, $rootScope) {
+            var url = document.URL.split('/');
+            var urltmp = url[4].split('?')[0];
+            $rootScope.lastUri = urltmp.split('#')[0];
+            // console.log(urltmp);
+            $scope.APP_DOMAIN = "${app_domain}/";
+
+            imgInp.onchange = evt => {
+                const [file] = imgInp.files
+                if (file) {
+                blah.src = URL.createObjectURL(file)
+                blah.style = "block";
+                blah.style = "width: 100px"
+                }
+            }
+      
+       });
+    </script>
   
 
 </body>
