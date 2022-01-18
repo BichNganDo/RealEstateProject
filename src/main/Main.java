@@ -13,6 +13,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import servlets.admin.PartialServlet;
 import servlets.admin.api.APICategoryServlet;
 import servlets.admin.banner.AddBannerServlet;
+import servlets.admin.banner.EditBannerServlet;
 import servlets.admin.banner.ManageBannerServlet;
 import servlets.admin.category.AddCategoryServlet;
 import servlets.admin.category.EditCategoryServlet;
@@ -32,6 +33,7 @@ public class Main {
 
         context.addServlet(new ServletHolder(new ManageBannerServlet()), "/admin/banner");
         context.addServlet(new ServletHolder(new AddBannerServlet()), "/admin/banner/add");
+        context.addServlet(new ServletHolder(new EditBannerServlet()), "/admin/banner/edit");
 
         context.addServlet(new ServletHolder(new APICategoryServlet()), "/admin/api/category");
 
