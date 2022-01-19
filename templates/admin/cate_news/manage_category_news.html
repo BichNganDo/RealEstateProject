@@ -35,12 +35,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Manage Banner</h1>
+                            <h1 class="m-0">Manage Category News</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Dashbroad</a></li>
-                                <li class="breadcrumb-item active">Manage Banner </li>
+                                <li class="breadcrumb-item active">Manage Category News</li>
                             </ol>
                         </div>
                     </div>
@@ -53,27 +53,42 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-5">
                                     <div class="input-group">
                                         <input ng-model="search_query" type="text" name="search" class="form-control" placeholder="Search">
                                         <div class="input-group-append">
-                                            <button ng-click="getListBanner()" type="button" class="btn btn-primary"><i class="fas fa-search"> Search</i>
+                                            <button ng-click="getListCategoryNews()" type="button" class="btn btn-primary"><i class="fas fa-search"> Search</i>
                                               </button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="input-group">
-                                        <select ng-model="search_status" ng-change="getListBanner()" ng-init="search_status='0'" class="form-control">
+                                        <select ng-model="search_status" ng-change="getListCategoryNews()" ng-init="search_status='0'" class="form-control">
                                             <option value="0">Filter status</option>
                                             <option value="1">Show</option>
                                             <option value="2">Hide</option>
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-sm-1">
+                                    <div class="form-group" style="margin-top: 8px;">
+                                        <div class="form-check">
+                                            <div style="display: inline-block;padding-right: 30px;">
+                                                <input ng-model="hot" class="form-check-input" type="checkbox" ng-change="getListCategoryNews()">
+                                                <label class="form-check-label">Hot</label>
+                                            </div>
+                                            <div style="display: inline-block; ">
+                                                <input ng-model="new" class="form-check-input" type="checkbox" ng-change="getListCategoryNews()">
+                                                <label class="form-check-label">New</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="col-sm-2 text-right">
-                                    <a class="btn btn-primary" href="/admin/banner/add">
-                                        <i class="fas fa-plus"></i> Add Banner
+                                    <a class="btn btn-primary" href="/admin/category_news/add">
+                                        <i class="fas fa-plus"></i> Add Category News
                                     </a>
                                 </div>
                             </div>
@@ -82,7 +97,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">List Banners</h3>
+                            <h3 class="card-title">List Categories News</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                                         <i class="fas fa-minus"></i>
@@ -99,28 +114,22 @@
                                         <th style="width: 2%">
                                             Id
                                         </th>
-                                        <th style="width: 12%">
-                                            Banner Name
-                                        </th>
-                                        <th style="width: 12%">
-                                            Image
-                                        </th>
                                         <th style="width: 17%">
-                                            Action
+                                            Category News Name
                                         </th>
-                                        <th style="width: 10%">
-                                            Position
-                                        </th>
-                                        <th style="width: 5%">
-                                            Status
+                                        <th style="width: 20%">
+                                            Category News Name Slug
                                         </th>
                                         <th style="width: 5%">
                                             Orders
                                         </th>
-                                        <th style="width: 12%">
+                                        <th style="width: 7%">
+                                            Status
+                                        </th>
+                                        <th style="width: 15%">
                                             Created Date
                                         </th>
-                                        <th style="width: 12%">
+                                        <th style="width: 15%">
                                             Updated Date
                                         </th>
                                         <th>
@@ -128,28 +137,27 @@
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody dir-paginate="item in listBanner | itemsPerPage: 10" total-items="totalBanner" pagination-id="banner">
+                                <tbody>
                                     <tr>
-                                        <td>{{item.id}}</td>
-                                        <td>{{item.bannerName}}</td>
-                                        <td>
-                                            <img width="100%" src="{{item.image}}" alt="">
+                                        <td>1</td>
+                                        <td>Khuyến mãi  
+                                            <!-- <span ng-if="item.property.cateHot" class="badge badge-danger">Hot</span>
+                                            <span ng-if="item.property.cateNew" class="badge badge-primary">New</span> -->
                                         </td>
-                                        <td>{{item.action}}</td>
-                                        <td>{{item.position}}</td>
+                                        <td>khuyen-mai</td>
+                                        <td>1</td>
                                         <td>
-                                            <span ng-if="item.status==1" class="badge badge-info">Show</span>
-                                            <span ng-if="item.status==2" class="badge badge-secondary">Hide</span>
+                                            <span class="badge badge-info">Show</span>
+                                            <!-- <span ng-if="item.status==2" class="badge badge-secondary">Hide</span> -->
                                         </td>
-                                        <td>{{item.orders}}</td>
-                                        <td>{{item.createdDate}}</td>
-                                        <td>{{item.updatedDate}}</td>
+                                        <td>01/01/2022</td>
+                                        <td>01/01/2022</td>
                                         <td class="project-actions text-right">
-                                            <a class="btn btn-info btn-sm" href="/admin/banner/edit?id={{item.id}}" style="margin: 5px 5px">
+                                            <a class="btn btn-info btn-sm" href="/admin/category_news/edit?id={{item.id}}" style="margin: 5px 5px">
                                                 <i class="fas fa-pencil-alt">
                                                 </i> Edit
                                             </a>
-                                            <a ng-click="delete(item.id, item.bannerName)" class="btn btn-danger btn-sm" href="#" style="margin: 5px 5px">
+                                            <a ng-click="delete(item.id, item.cateName)" class="btn btn-danger btn-sm" href="#" style="margin: 5px 5px">
                                                 <i class="fas fa-trash">
                                                 </i> Delete
                                             </a>
@@ -158,7 +166,7 @@
                                 </tbody>
                             </table>
                             <div class="clearfix mt-3" style="margin-left: auto; padding-right: 20px;">
-                                <dir-pagination-controls pagination-id="banner" on-page-change="pageChanged(newPageNumber)" boundary-links="true" style="font-size: 13px"></dir-pagination-controls>
+                                <dir-pagination-controls pagination-id="category" on-page-change="pageChanged(newPageNumber)" boundary-links="true" style="font-size: 13px"></dir-pagination-controls>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -181,75 +189,17 @@
     ${footer_include}
 
     <script>
-        var app = angular.module('myApp', ['ngPagination']); //ngPagination
+         var app = angular.module('myApp', ['ngPagination']); //ngPagination
         app.controller('mainCtrl', function($scope, $http, $rootScope) {
             var url = document.URL.split('/');
             var urltmp = url[4].split('?')[0];
             $rootScope.lastUri = urltmp.split('#')[0];
 
             $scope.APP_DOMAIN = "${app_domain}/";
-
-            $scope.selectedPageIndex = 1;
-
-            $scope.getListBanner = function() {
-                console.log($scope.search_query);
-                console.log($scope.search_status);
-                $http({
-                    method: "GET",
-                    url: $scope.APP_DOMAIN + "admin/api/banner",
-                    params: {
-                        action: 'getbanner',
-                        page_index: $scope.selectedPageIndex,
-                        limit: 10,
-                        search_query: $scope.search_query,
-                        search_status: $scope.search_status,
-                    },
-                }).then(function(response) {
-                    console.log(response);
-                    if (response.data.errorCode >= 0 && response.data.data) {
-                        $scope.listBanner = response.data.data.listBanners;
-                        $scope.totalBanner = response.data.data.total;
-                    } else {
-                        $scope.listBanner = [];
-                        $scope.totalBanner = 0;
-                    }
-
-                })
-            }
-            $scope.pageChanged = function(pageIndex) {
-                $scope.selectedPageIndex = pageIndex;
-                $scope.getListBanner();
-            };
-
-            $scope.getListBanner();
-
-            //DELETE
-            $scope.delete = function(idDel, nameDel) {
-                var r = confirm("Bạn chắc chắn muốn xóa " + nameDel + " ?");
-                if (r == true) {
-                    var data = $.param({
-                        id: idDel
-                    });
-                    var config = {
-                        headers: {
-                            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
-                        }
-                    }
-                    $http.post('${app_domain}/admin/api/banner?action=delete', data, config)
-                        .then(function(response) {
-                            showNotification("success", response.data.message);
-                            $scope.getListBanner();
-                        }, function(error) {
-                            showNotification("error", error.data.message);
-                        })
-                }
-            }
-
-
+            
 
         });
     </script>
-    
 </body>
 
 </html>

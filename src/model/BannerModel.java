@@ -277,7 +277,7 @@ public class BannerModel {
         return ErrorCode.FAIL.getValue();
     }
 
-    public int deleteCategory(int id) {
+    public int deleteBanner(int id) {
         Connection conn = null;
         try {
             conn = dbClient.getDbConnection();

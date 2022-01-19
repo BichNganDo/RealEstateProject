@@ -47,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Add Banner</h1>
+                            <h1 class="m-0">Edit Banner</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -96,10 +96,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </select>
                                     <span class="error-msg" ng-show="status == '0' && !formAddData.status.$pristine"> Dữ liệu không được để trống!</span>
                                 </div>
+                                <div class="form-group">
+                                    <label>Orders</label>
+                                    <input ng-model="orders" type="number" class="form-control">
+                                </div>
                                 <div class="mb-3">
                                     <label class="mb-2" style="color:black">Image</label><br>
-                                    <input accept="image/*" name="image" ng-required ="true" type='file' id="imgInp" style="color: black;"/>
-                                    <img class="mt-2" id="blah" onError="this.style.display = 'none';" src="#" alt="your image" style="display: block;" />
+                                    <input accept="image/*" file="filex" name="file2" ng-required ="true" type='file' id="preImg"/>
+                                    <input type="text" value="{{image}}"  name="file" id="preImgOld" style="color: black;" accept="image/*" hidden/>
+                                    <img ng-src="{{image}}" class="mt-2" id="blah" onerror="this.style.display = 'none';" alt="your image" width="150px" style="display: block;" />
                                     <span ng-show="formAddData.image.$invalid && !formAddData.image.$pristine" class="error-msg"> Dữ liệu không được để trống!</span>
                                 </div>
                                 <div>
@@ -126,15 +131,107 @@ scratch. This page gets rid of all links and provides the needed markup only.
     ${footer_include}
     <script>
         var app = angular.module('myApp', ['ngPagination']); //ngPagination
-       app.controller('mainCtrl', function($scope, $http, $rootScope) {
+        app.directive('file', function() {
+            return {
+                scope: {
+                    file: '='
+                },
+                link: function(scope, el, attrs) {
+                    el.bind('change', function(event) {
+                        var file = event.target.files[0];
+                        scope.file = file ? file : undefined;
+                        scope.$apply();
+                    });
+                }
+            };
+        });
+        app.controller('mainCtrl', function($scope, $http, $rootScope) {
             var url = document.URL.split('/');
             var urltmp = url[4].split('?')[0];
             $rootScope.lastUri = urltmp.split('#')[0];
             // console.log(urltmp);
             $scope.APP_DOMAIN = "${app_domain}/";
 
-            
-      
+            preImg.onchange = evt => {
+                const [file] = preImg.files
+                if (file) {
+                    blah.src = URL.createObjectURL(file)
+                    blah.style = "block";
+                }
+            }
+
+             // get idBanner
+             var id_banner = getUrlParameter('id');
+
+            $http({
+                method: "GET",
+                url: $scope.APP_DOMAIN + "admin/api/banner",
+                params: {
+                    action: 'getBannerById',
+                    id_banner: id_banner
+                },
+            }).then(function(response) {
+                $scope.editBanner = response.data.data
+                console.log($scope.editBanner);
+
+                $scope.id = $scope.editBanner.id;
+                $scope.banner_name = $scope.editBanner.bannerName;
+                $scope.action = $scope.editBanner.action;
+                $scope.position = $scope.editBanner.position+"";
+                $scope.status = $scope.editBanner.status + "";
+                $scope.orders = $scope.editBanner.orders;
+                $scope.image = $scope.editBanner.image;
+                console.log($scope.image);
+            })
+
+            //Save Data da sua
+            $scope.saveDataEdit = function() {
+                var image = $scope.filex
+                var oldImage = document.getElementById("preImgOld").value;
+                if ($scope.banner_name && $scope.action && $scope.position > 0 && $scope.status > 0) {
+                    $http({
+                        method: 'POST',
+                        url: $scope.APP_DOMAIN + 'admin/api/banner?action=edit',
+                        headers: {
+                            'content-type': undefined
+                        },
+                        data: {
+                            id: $scope.id,
+                            banner_name: $scope.banner_name,
+                            action: $scope.action,
+                            position: $scope.position,
+                            orders: $scope.orders,
+                            status: $scope.status,
+                            image: $scope.filex,
+                            old_image: oldImage
+                        },
+
+                        transformRequest: function(data, headersGetter) {
+                            console.log(data);
+                            var formData = new FormData();
+                            angular.forEach(data, function(value, key) {
+                                formData.append(key, value);
+                            });
+
+                            return formData;
+
+                        }
+                    }).then(function(response) {
+                        if (response.data.errorCode >= 0) {
+                            showNotification("success", response.data.message);
+                            window.location.replace($scope.APP_DOMAIN + "admin/banner");
+                        } else {
+                            showNotification("error", response.data.message);
+                        }
+                    }, function(error) {
+                        showNotification("error", response.data.message);
+
+                    })
+                } else {
+                    showNotification("error", "Dữ liệu không hợp lệ!");
+                }
+
+            }
        });
     </script>
   

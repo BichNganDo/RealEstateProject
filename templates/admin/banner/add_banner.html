@@ -160,7 +160,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             }
 
             $scope.addData = function() {
-                if ($scope.banner_name && $scope.action && $scope.position && $scope.status) {
+                if ($scope.banner_name && $scope.action && $scope.position > 0 && $scope.status > 0) {
                     $http({
                             method: 'POST',
                             url: $scope.APP_DOMAIN + 'admin/api/banner?action=add',

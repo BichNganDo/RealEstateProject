@@ -22,6 +22,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -170,122 +171,113 @@ public class APIBannerServlet extends HttpServlet {
                 break;
             }
 
-//            case "edit": {
-//                try {
-//                    boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-//                    if (isMultipart) {
-//                        Film film = new Film();
-//                        String oldImagePoster = "";
-//                        String newImagePoster = "";
-//                        ServletFileUpload upload = new ServletFileUpload(new DiskFileItemFactory());
-//                        upload.setHeaderEncoding("UTF-8");
+            case "edit": {
+                try {
+                    boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+                    if (isMultipart) {
+                        Banner banner = new Banner();
+                        String oldImage = "";
+                        String newImage = "";
+                        ServletFileUpload upload = new ServletFileUpload(new DiskFileItemFactory());
+                        upload.setHeaderEncoding("UTF-8");
+
+                        List<FileItem> items = upload.parseRequest(request);
+                        for (FileItem item : items) {
+                            if (item.isFormField()) {
+                                // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
+                                String fieldname = item.getFieldName();
+                                String fieldvalue = item.getString("UTF-8");
+
+                                switch (fieldname) {
+                                    case "id": {
+                                        banner.setId(NumberUtils.toInt(fieldvalue));
+                                        break;
+                                    }
+                                    case "banner_name": {
+                                        banner.setBannerName(fieldvalue);
+                                        break;
+                                    }
+                                    case "action": {
+                                        banner.setAction(fieldvalue);
+                                        break;
+                                    }
+                                    case "position": {
+                                        banner.setPosition(NumberUtils.toInt(fieldvalue));
+                                        break;
+                                    }
+                                    case "status": {
+                                        banner.setStatus(NumberUtils.toInt(fieldvalue));
+                                        break;
+                                    }
+                                    case "orders": {
+                                        banner.setOrders(NumberUtils.toInt(fieldvalue));
+                                        break;
+                                    }
+                                    case "old_image": {
+                                        oldImage = fieldvalue;
+                                        break;
+                                    }
+
+                                }
+
+                            } else {
+                                // Process form file field (input type="file").
+                                String filename = FilenameUtils.getName(item.getName());
+                                InputStream a = item.getInputStream();
+                                Path uploadDir = Paths.get("upload/banner/" + filename);
+                                Files.copy(a, uploadDir, StandardCopyOption.REPLACE_EXISTING);
+                                newImage = "upload/banner/" + filename;
+                            }
+                        }
+
+                        if (StringUtils.isNotEmpty(newImage)) {
+                            banner.setImage(newImage);
+                        } else {
+                            banner.setImage(oldImage);
+                        }
+                        Banner bannerByID = BannerModel.INSTANCE.getBannerByID(banner.getId());
+                        if (bannerByID.getId() == 0) {
+                            result.setErrorCode(-1);
+                            result.setMessage("Thất bại");
+                            return;
+                        }
+                        boolean existBannerName = BannerModel.INSTANCE.isExistBannerName(banner.getId(), banner.getBannerName());
+                        if (existBannerName == true) {
+                            result.setErrorCode(-4);
+                            result.setMessage("Banner Name đã tồn tại");
+                        } else {
+                            int editBanner = BannerModel.INSTANCE.editBanner(banner);
+                            if (editBanner >= 0) {
+                                result.setErrorCode(0);
+                                result.setMessage("Sửa banner thành công!");
+                            } else {
+                                result.setErrorCode(-1);
+                                result.setMessage("Sửa banner thất bại!");
+                            }
+                        }
+                    } else {
+                        result.setErrorCode(-4);
+                        result.setMessage("Có lỗi");
+                    }
+
 //
-//                        List<FileItem> items = upload.parseRequest(request);
-//                        for (FileItem item : items) {
-//                            if (item.isFormField()) {
-//                                // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
-//                                String fieldname = item.getFieldName();
-//                                String fieldvalue = item.getString("UTF-8");
-//
-//                                switch (fieldname) {
-//                                    case "id": {
-//                                        film.setId(NumberUtils.toInt(fieldvalue));
-//                                        break;
-//                                    }
-//                                    case "category": {
-//                                        film.setIdCate(NumberUtils.toInt(fieldvalue));
-//                                        break;
-//                                    }
-//                                    case "title": {
-//                                        film.setTitle(fieldvalue);
-//                                        break;
-//                                    }
-//                                    case "content": {
-//                                        film.setContent(fieldvalue);
-//                                        break;
-//                                    }
-//                                    case "duration": {
-//                                        film.setDuration(fieldvalue);
-//                                        break;
-//                                    }
-//                                    case "opening_day": {
-//                                        film.setOpenDay(fieldvalue);
-//                                        break;
-//                                    }
-//                                    case "trailer": {
-//                                        film.setTrailer(fieldvalue);
-//                                        break;
-//                                    }
-//                                    case "status": {
-//                                        film.setStatus(NumberUtils.toInt(fieldvalue));
-//                                        break;
-//                                    }
-//                                    case "property": {
-//                                        film.setProperty(NumberUtils.toInt(fieldvalue));
-//                                        break;
-//                                    }
-//                                    case "poster": {
-//                                        oldImagePoster = fieldvalue;
-//                                        break;
-//                                    }
-//
-//                                }
-//
-//                            } else {
-//                                // Process form file field (input type="file").
-//                                String filename = FilenameUtils.getName(item.getName());
-//                                InputStream a = item.getInputStream();
-//                                Path uploadDir = Paths.get("upload/poster_film/" + filename);
-//                                Files.copy(a, uploadDir, StandardCopyOption.REPLACE_EXISTING);
-//                                newImagePoster = "upload/poster_film/" + filename;
-//                            }
-//                        }
-//
-//                        if (StringUtils.isNotEmpty(newImagePoster)) {
-//                            film.setPoster(newImagePoster);
-//                        } else {
-//                            film.setPoster(oldImagePoster);
-//                        }
-//
-//                        Film filmById = FilmModel.INSTANCE.getFilmByID(film.getId());
-//                        if (filmById.getId() == 0) {
-//                            result.setErrorCode(-1);
-//                            result.setMessage("Thất bại");
-//                            return;
-//                        }
-//
-//                        int editFilm = FilmModel.INSTANCE.editFilm(film);
-//
-//                        if (editFilm >= 0) {
-//                            result.setErrorCode(0);
-//                            result.setMessage("Sua film thanh cong!");
-//                        } else {
-//                            result.setErrorCode(-1);
-//                            result.setMessage("Sua film that bai");
-//                        }
-//                    } else {
-//                        result.setErrorCode(-4);
-//                        result.setMessage("Có lỗi");
-//                    }
-//
-////
-//                } catch (Exception e) {
-//                    System.out.println(e.getMessage());
-//                }
-//                break;
-//            }
-//            case "delete": {
-//                int id = NumberUtils.toInt(request.getParameter("id"));
-//                int deleteFilm = FilmModel.INSTANCE.deleteFilm(id);
-//                if (deleteFilm >= 0) {
-//                    result.setErrorCode(0);
-//                    result.setMessage("Xóa Film thành công1");
-//                } else {
-//                    result.setErrorCode(-2);
-//                    result.setMessage("Xóa Film thất bại!");
-//                }
-//                break;
-//            }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+                break;
+            }
+            case "delete": {
+                int id = NumberUtils.toInt(request.getParameter("id"));
+                int deleteBanner = BannerModel.INSTANCE.deleteBanner(id);
+                if (deleteBanner >= 0) {
+                    result.setErrorCode(0);
+                    result.setMessage("Xóa banner thành công1");
+                } else {
+                    result.setErrorCode(-2);
+                    result.setMessage("Xóa banner thất bại!");
+                }
+                break;
+            }
             default:
                 throw new AssertionError();
         }
