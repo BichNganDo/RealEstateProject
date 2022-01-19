@@ -1,16 +1,15 @@
 package main;
 
-import static java.util.Locale.filter;
 import org.apache.log4j.PropertyConfigurator;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
-import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import servlets.admin.PartialServlet;
+import servlets.admin.api.APIBannerServlet;
 import servlets.admin.api.APICategoryServlet;
 import servlets.admin.banner.AddBannerServlet;
 import servlets.admin.banner.EditBannerServlet;
@@ -36,6 +35,7 @@ public class Main {
         context.addServlet(new ServletHolder(new EditBannerServlet()), "/admin/banner/edit");
 
         context.addServlet(new ServletHolder(new APICategoryServlet()), "/admin/api/category");
+        context.addServlet(new ServletHolder(new APIBannerServlet()), "/admin/api/banner");
 
 //
 //        FilterHolder authenFilter = new FilterHolder(new AuthenFilter());
@@ -49,13 +49,13 @@ public class Main {
             resourceHandler.setHandler(new ResourceHandler());
         }
 
-        ContextHandler avatarHandler = new ContextHandler("/avatar");
-        String resourceUpload = "./avatar";
-        avatarHandler.setResourceBase(resourceUpload);
-        avatarHandler.setHandler(new ResourceHandler());
+        ContextHandler imageBannerHandler = new ContextHandler("/upload");
+        String resourceUpload = "./upload";
+        imageBannerHandler.setResourceBase(resourceUpload);
+        imageBannerHandler.setHandler(new ResourceHandler());
 
         HandlerList handlers = new HandlerList();
-        handlers.setHandlers(new Handler[]{resourceHandler, avatarHandler, context});
+        handlers.setHandlers(new Handler[]{resourceHandler, imageBannerHandler, context});
 
         Server server = new Server(8080);
 
