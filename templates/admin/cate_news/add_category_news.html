@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+
+<head>
+    <!-- REQUIRED HEADER -->
+    ${header_include}
+
+    <style>
+        .error-msg {
+        font-size: 90%;
+        font-style: italic;
+        color: red;
+        }
+     </style>
+</head>
+
+
+<body class="hold-transition sidebar-mini" ng-app="myApp" ng-cloak>
+<div class="wrapper" ng-controller="mainCtrl">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="" role="button">
+                       Logout <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <div ng-include="APP_DOMAIN +'admin/partital/menu.html'"></div>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Add Category News</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Dashbroad</a></li>
+                                <li class="breadcrumb-item active">Manage Category News</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card card-primary">
+
+                        <!-- form start -->
+                        <form name="formAddData">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Category News Name</label>
+                                    <input ng-model="cate_news_name" name="cate_news_name" ng-required ="true"  type="text" class="form-control" placeholder="Category Name">
+                                    <span ng-show="formAddData.cate_news_name.$invalid && !formAddData.cate_news_name.$pristine" class="error-msg"> Dữ liệu không được để trống!</span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Orders</label>
+                                    <input ng-model="orders" type="number" class="form-control" placeholder="Orders">
+                                </div>
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <select ng-model="status" name="status" ng-select ="true" ng-init="status='0'" class="form-control">
+                                        <option value="0">Choose the Status</option>
+                                        <option value="1">Show</option>
+                                        <option value="2">Hide</option>
+                                    </select>
+                                    <span class="error-msg" ng-show="status == '0' && !formAddData.status.$pristine"> Dữ liệu không được để trống!</span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input ng-model="hot" class="form-check-input" type="checkbox">
+                                        <label class="form-check-label"><b>Hot</b></label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input ng-model="new" class="form-check-input" type="checkbox">
+                                        <label class="form-check-label"><b>New</b></label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button ng-click="addData()" type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- /.content -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
+
+    ${footer_include}
+    <script>
+        var app = angular.module('myApp', ['ngPagination']); //ngPagination
+       app.controller('mainCtrl', function($scope, $http, $rootScope) {
+            var url = document.URL.split('/');
+            var urltmp = url[4].split('?')[0];
+            $rootScope.lastUri = urltmp.split('#')[0];
+            // console.log(urltmp);
+            $scope.APP_DOMAIN = "${app_domain}/";
+
+
+       });
+   </script>
+
+</body>
+
+</html>
