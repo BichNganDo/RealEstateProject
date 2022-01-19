@@ -128,6 +128,10 @@ public class APIBannerServlet extends HttpServlet {
                                         banner.setStatus(NumberUtils.toInt(fieldvalue));
                                         break;
                                     }
+                                    case "orders": {
+                                        banner.setOrders(NumberUtils.toInt(fieldvalue));
+                                        break;
+                                    }
 
                                 }
 

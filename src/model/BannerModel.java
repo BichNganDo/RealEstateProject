@@ -46,10 +46,10 @@ public class BannerModel {
             }
 
             if (filterBanner.getStatus() > 0) {
-                sql = sql + " AND c.status = ? ";
+                sql = sql + " AND status = ? ";
             }
 
-            sql = sql + " LIMIT ? OFFSET ? ";
+            sql = sql + " ORDER BY `orders` ASC LIMIT ? OFFSET ? ";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             int param = 1;
@@ -74,6 +74,7 @@ public class BannerModel {
                 banner.setAction(rs.getString("action"));
                 banner.setPosition(rs.getInt("position"));
                 banner.setStatus(rs.getInt("status"));
+                banner.setOrders(rs.getInt("orders"));
                 banner.setImageUrlWithBaseDomain(rs.getString("image"));
                 
                 long currentTimeMillis = rs.getLong("created_date");
@@ -160,6 +161,7 @@ public class BannerModel {
                 result.setAction(rs.getString("action"));
                 result.setPosition(rs.getInt("position"));
                 result.setStatus(rs.getInt("status"));
+                result.setOrders(rs.getInt("orders"));
                 result.setImageUrlWithBaseDomain(rs.getString("image"));
 
                 long currentTimeMillis = rs.getLong("created_date");
@@ -223,15 +225,16 @@ public class BannerModel {
             }
 
             PreparedStatement addStmt = conn.prepareStatement("INSERT INTO `" + NAMETABLE + "` (banner_name, action, position, image, "
-                    + "status, created_date, updated_date)"
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?)");
+                    + "status, orders, created_date, updated_date)"
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             addStmt.setString(1, banner.getBannerName());
             addStmt.setString(2, banner.getAction());
             addStmt.setInt(3, banner.getPosition());
             addStmt.setString(4, banner.getImage());
             addStmt.setInt(5, banner.getStatus());
-            addStmt.setString(6, System.currentTimeMillis() + "");
+            addStmt.setInt(6, banner.getOrders());
             addStmt.setString(7, System.currentTimeMillis() + "");
+            addStmt.setString(8, System.currentTimeMillis() + "");
             int result = addStmt.executeUpdate();
 
             return result;
@@ -253,14 +256,15 @@ public class BannerModel {
             }
 
             PreparedStatement editStmt = conn.prepareStatement("UPDATE `" + NAMETABLE + "` SET banner_name = ?, action = ?, position = ?, "
-                    + "image = ?, status = ?, updated_date = ? WHERE id = ?");
+                    + "image = ?, status = ?, orders = ?, updated_date = ? WHERE id = ?");
             editStmt.setString(1, banner.getBannerName());
             editStmt.setString(2, banner.getAction());
             editStmt.setInt(3, banner.getPosition());
             editStmt.setString(4, banner.getImage());
             editStmt.setInt(5, banner.getStatus());
-            editStmt.setString(6, System.currentTimeMillis() + "");
-            editStmt.setInt(7, banner.getId());
+            editStmt.setInt(6, banner.getOrders());
+            editStmt.setString(7, System.currentTimeMillis() + "");
+            editStmt.setInt(8, banner.getId());
 
             int rs = editStmt.executeUpdate();
 

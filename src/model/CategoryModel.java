@@ -54,7 +54,7 @@ public class CategoryModel {
                 sql = sql + " AND c.property = ? ";
             }
 
-            sql = sql + " ORDER BY `orders` DESC LIMIT ? OFFSET ? ";
+            sql = sql + " ORDER BY `orders` ASC LIMIT ? OFFSET ? ";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             int param = 1;

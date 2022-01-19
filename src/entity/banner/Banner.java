@@ -9,6 +9,7 @@ public class Banner {
     private String action;
     private int position;
     private int status;
+    private int orders;
     private String image;
     private String createdDate;
     private String updatedDate;
@@ -54,6 +55,14 @@ public class Banner {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public int getOrders() {
+        return orders;
+    }
+
+    public void setOrders(int orders) {
+        this.orders = orders;
     }
 
     public String getImage() {

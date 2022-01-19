@@ -57,14 +57,14 @@
                                     <div class="input-group">
                                         <input ng-model="search_query" type="text" name="search" class="form-control" placeholder="Search">
                                         <div class="input-group-append">
-                                            <button ng-click="getListCategory()" type="button" class="btn btn-primary"><i class="fas fa-search"> Search</i>
+                                            <button ng-click="getListBanner()" type="button" class="btn btn-primary"><i class="fas fa-search"> Search</i>
                                               </button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="input-group">
-                                        <select ng-model="search_status" ng-change="getListCategory()" ng-init="search_status='0'" class="form-control">
+                                        <select ng-model="search_status" ng-change="getListBanner()" ng-init="search_status='0'" class="form-control">
                                             <option value="0">Filter status</option>
                                             <option value="1">Show</option>
                                             <option value="2">Hide</option>
@@ -99,7 +99,7 @@
                                         <th style="width: 2%">
                                             Id
                                         </th>
-                                        <th style="width: 15%">
+                                        <th style="width: 12%">
                                             Banner Name
                                         </th>
                                         <th style="width: 12%">
@@ -111,8 +111,11 @@
                                         <th style="width: 10%">
                                             Position
                                         </th>
-                                        <th style="width: 7%">
+                                        <th style="width: 5%">
                                             Status
+                                        </th>
+                                        <th style="width: 5%">
+                                            Orders
                                         </th>
                                         <th style="width: 12%">
                                             Created Date
@@ -125,23 +128,24 @@
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody dir-paginate="item in listBanner | itemsPerPage: 10" total-items="totalBanner" pagination-id="banner">
                                     <tr>
-                                        <td>1</td>
-                                        <td>Nha moi xay</td>
+                                        <td>{{item.id}}</td>
+                                        <td>{{item.bannerName}}</td>
                                         <td>
-                                            <img width="100%" src="https://static.dienluc247.com/images/19/07/Sunflower%202769.jpg" alt="">
+                                            <img width="100%" src="{{item.image}}" alt="">
                                         </td>
-                                        <td>http://ngandethuong</td>
-                                        <td>o dau</td>
+                                        <td>{{item.action}}</td>
+                                        <td>{{item.position}}</td>
                                         <td>
-                                            <span class="badge badge-info">Show</span>
-                                            <!-- <span ng-if="item.status==2" class="badge badge-secondary">Hide</span> -->
+                                            <span ng-if="item.status==1" class="badge badge-info">Show</span>
+                                            <span ng-if="item.status==2" class="badge badge-secondary">Hide</span>
                                         </td>
-                                        <td>01/01/2022</td>
-                                        <td>01/01/2022</td>
+                                        <td>{{item.orders}}</td>
+                                        <td>{{item.createdDate}}</td>
+                                        <td>{{item.updatedDate}}</td>
                                         <td class="project-actions text-right">
-                                            <a class="btn btn-info btn-sm" href="/admin/banner/edit" style="margin: 5px 5px">
+                                            <a class="btn btn-info btn-sm" href="/admin/banner/edit?id={{item.id}}" style="margin: 5px 5px">
                                                 <i class="fas fa-pencil-alt">
                                                 </i> Edit
                                             </a>
@@ -154,7 +158,7 @@
                                 </tbody>
                             </table>
                             <div class="clearfix mt-3" style="margin-left: auto; padding-right: 20px;">
-                                <dir-pagination-controls pagination-id="category" on-page-change="pageChanged(newPageNumber)" boundary-links="true" style="font-size: 13px"></dir-pagination-controls>
+                                <dir-pagination-controls pagination-id="banner" on-page-change="pageChanged(newPageNumber)" boundary-links="true" style="font-size: 13px"></dir-pagination-controls>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -184,6 +188,40 @@
             $rootScope.lastUri = urltmp.split('#')[0];
 
             $scope.APP_DOMAIN = "${app_domain}/";
+
+            $scope.selectedPageIndex = 1;
+
+            $scope.getListBanner = function() {
+                console.log($scope.search_query);
+                console.log($scope.search_status);
+                $http({
+                    method: "GET",
+                    url: $scope.APP_DOMAIN + "admin/api/banner",
+                    params: {
+                        action: 'getbanner',
+                        page_index: $scope.selectedPageIndex,
+                        limit: 10,
+                        search_query: $scope.search_query,
+                        search_status: $scope.search_status,
+                    },
+                }).then(function(response) {
+                    console.log(response);
+                    if (response.data.errorCode >= 0 && response.data.data) {
+                        $scope.listBanner = response.data.data.listBanners;
+                        $scope.totalBanner = response.data.data.total;
+                    } else {
+                        $scope.listBanner = [];
+                        $scope.totalBanner = 0;
+                    }
+
+                })
+            }
+            $scope.pageChanged = function(pageIndex) {
+                $scope.selectedPageIndex = pageIndex;
+                $scope.getListBanner();
+            };
+
+            $scope.getListBanner();
 
 
 

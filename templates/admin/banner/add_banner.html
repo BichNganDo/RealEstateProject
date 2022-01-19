@@ -96,8 +96,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </select>
                                     <span class="error-msg" ng-show="status == '0' && !formAddData.status.$pristine"> Dữ liệu không được để trống!</span>
                                 </div>
+                                <div class="form-group">
+                                    <label>Orders</label>
+                                    <input ng-model="orders" type="number" class="form-control" placeholder="Orders">
+                                </div>
                                 <div class="mb-3">
-
                                     <label class="mb-2" style="color:black">Image</label><br>
                                     <input ng-required ="true" type="file" file="filex" name="file2" id="preImg" style="color: black;" accept="image/*" />
                                     <img id="blah" src="#" class="mt-2" alt="your image" onerror="this.style.display = 'none'" width="150px" style="display: block;" />
@@ -157,10 +160,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             }
 
             $scope.addData = function() {
-                console.log($scope.banner_name);
-                console.log($scope.action);
-                console.log($scope.position);
-                console.log($scope.status);
                 if ($scope.banner_name && $scope.action && $scope.position && $scope.status) {
                     $http({
                             method: 'POST',
@@ -174,6 +173,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 image: $scope.filex,
                                 position: $scope.position,
                                 status: $scope.status,
+                                orders: $scope.orders,
                             },
                             transformRequest: function(data, headersGetter) {
                                 console.log(data);
@@ -191,13 +191,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             if (response.data.errorCode < 0) {
                                 showNotification("error", response.data.message);
                             } else {
-                                $scope.banner_name = "";
-                                $scope.action = "";
-                                $("#blah").css("display", "none");
-                                $('#preImg').val('');
-                                $scope.position = "0";
-                                $scope.status = "0";
+                                // $scope.banner_name = "";
+                                // $scope.action = "";
+                                // $("#blah").css("display", "none");
+                                // $('#preImg').val('');
+                                // $scope.position = "0";
+                                // $scope.status = "0";
+                                // $scope.orders="";
                                 showNotification("success", response.data.message);
+                                window.location.replace($scope.APP_DOMAIN + "admin/banner");
                             }
 
                         })
