@@ -114,16 +114,13 @@
                                         <th style="width: 2%">
                                             Id
                                         </th>
-                                        <th style="width: 17%">
+                                        <th style="width: 20%">
                                             Category News Name
                                         </th>
-                                        <th style="width: 20%">
-                                            Category News Name Slug
-                                        </th>
-                                        <th style="width: 5%">
+                                        <th style="width: 10%">
                                             Orders
                                         </th>
-                                        <th style="width: 7%">
+                                        <th style="width: 10%">
                                             Status
                                         </th>
                                         <th style="width: 15%">
@@ -137,27 +134,26 @@
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody dir-paginate="item in listCategoryNews | itemsPerPage: 10" total-items="totalCategoryNews" pagination-id="cate_news">
                                     <tr>
-                                        <td>1</td>
-                                        <td>Khuyến mãi  
-                                            <!-- <span ng-if="item.property.cateHot" class="badge badge-danger">Hot</span>
-                                            <span ng-if="item.property.cateNew" class="badge badge-primary">New</span> -->
+                                        <td>{{item.id}}</td>
+                                        <td>{{item.categoryNameNews}}  
+                                            <span ng-if="item.property.cateHot" class="badge badge-danger">Hot</span>
+                                            <span ng-if="item.property.cateNew" class="badge badge-primary">New</span>
                                         </td>
-                                        <td>khuyen-mai</td>
-                                        <td>1</td>
+                                        <td>{{item.orders}}</td>
                                         <td>
-                                            <span class="badge badge-info">Show</span>
-                                            <!-- <span ng-if="item.status==2" class="badge badge-secondary">Hide</span> -->
+                                            <span ng-if="item.status==1" class="badge badge-info">Show</span>
+                                            <span ng-if="item.status==2" class="badge badge-secondary">Hide</span>
                                         </td>
-                                        <td>01/01/2022</td>
-                                        <td>01/01/2022</td>
+                                        <td>{{item.createdDate}}</td>
+                                        <td>{{item.updatedDate}}</td>
                                         <td class="project-actions text-right">
-                                            <a class="btn btn-info btn-sm" href="/admin/category_news/edit" style="margin: 5px 5px">
+                                            <a class="btn btn-info btn-sm" href="/admin/category_news/edit?id={{item.id}}" style="margin: 5px 5px">
                                                 <i class="fas fa-pencil-alt">
                                                 </i> Edit
                                             </a>
-                                            <a ng-click="delete(item.id, item.cateName)" class="btn btn-danger btn-sm" href="#" style="margin: 5px 5px">
+                                            <a ng-click="delete(item.id, item.categoryNameNews)" class="btn btn-danger btn-sm" href="#" style="margin: 5px 5px">
                                                 <i class="fas fa-trash">
                                                 </i> Delete
                                             </a>
@@ -166,7 +162,7 @@
                                 </tbody>
                             </table>
                             <div class="clearfix mt-3" style="margin-left: auto; padding-right: 20px;">
-                                <dir-pagination-controls pagination-id="category" on-page-change="pageChanged(newPageNumber)" boundary-links="true" style="font-size: 13px"></dir-pagination-controls>
+                                <dir-pagination-controls pagination-id="cate_news" on-page-change="pageChanged(newPageNumber)" boundary-links="true" style="font-size: 13px"></dir-pagination-controls>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -196,7 +192,74 @@
             $rootScope.lastUri = urltmp.split('#')[0];
 
             $scope.APP_DOMAIN = "${app_domain}/";
-            
+            $scope.selectedPageIndex = 1;
+
+            $scope.getListCategoryNews = function() {
+                let property = 0;
+                if ($scope.hot) {
+                    property = property + 1;
+                }
+                if ($scope.new) {
+                    property = property + 2;
+                }
+                console.log($scope.search_query);
+                console.log($scope.search_status);
+                console.log(property);
+                $http({
+                    method: "GET",
+                    url: $scope.APP_DOMAIN + "admin/api/category_news",
+                    params: {
+                        action: 'getcategorynews',
+                        page_index: $scope.selectedPageIndex,
+                        limit: 10,
+                        search_query: $scope.search_query,
+                        search_status: $scope.search_status,
+                        search_property: property
+                    },
+                }).then(function(response) {
+                    console.log(response);
+                    if (response.data.errorCode >= 0 && response.data.data) {
+                        $scope.listCategoryNews = response.data.data.listCategoryNews;
+                        $scope.totalCategoryNews = response.data.data.total;
+                    } else {
+                        $scope.listCategoryNews = [];
+                        $scope.totalCategoryNews = 0;
+                    }
+
+                })
+            }
+            $scope.pageChanged = function(pageIndex) {
+                $scope.selectedPageIndex = pageIndex;
+                $scope.getListCategoryNews();
+            };
+
+            $scope.getListCategoryNews();
+
+            //DELETE
+            $scope.delete = function(idDel, nameDel) {
+                var r = confirm("Bạn chắc chắn muốn xóa " + nameDel + " ?");
+                if (r == true) {
+                    var data = $.param({
+                        id: idDel
+                    });
+                    var config = {
+                        headers: {
+                            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                        }
+                    }
+                    $http.post('${app_domain}/admin/api/category_news?action=delete', data, config)
+                        .then(function(response) {
+                            // console.log(response);
+                            showNotification("success", response.data.message);
+                            $scope.getListCategoryNews();
+                        }, function(error) {
+                            // console.log(error.data.message);
+                            showNotification("error", error.data.message);
+                        })
+                }
+            }
+
+
 
         });
     </script>

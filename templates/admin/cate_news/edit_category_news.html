@@ -70,8 +70,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Category News Name</label>
-                                    <input ng-model="cate_news_name" name="cate_news_name" ng-required ="true"  type="text" class="form-control">
-                                    <span ng-show="formAddData.cate_news_name.$invalid && !formAddData.cate_news_name.$pristine" class="error-msg"> Dữ liệu không được để trống!</span>
+                                    <input ng-model="cate_name_news" name="cate_name_news" ng-required ="true"  type="text" class="form-control">
+                                    <span ng-show="formAddData.cate_name_news.$invalid && !formAddData.cate_name_news.$pristine" class="error-msg"> Dữ liệu không được để trống!</span>
                                 </div>
                                 <div class="form-group">
                                     <label>Orders</label>
@@ -125,6 +125,74 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $rootScope.lastUri = urltmp.split('#')[0];
             // console.log(urltmp);
             $scope.APP_DOMAIN = "${app_domain}/";
+
+             // get idCategory
+             var id_category_news = getUrlParameter('id');
+            console.log("id: " + id_category_news);
+
+            $http({
+                method: "GET",
+                url: $scope.APP_DOMAIN + "admin/api/category_news",
+                params: {
+                    action: 'getCategoryNewsById',
+                    id_category_news: id_category_news
+                },
+            }).then(function(response) {
+                $scope.editCategoryNews = response.data.data
+                console.log($scope.editCategoryNews);
+
+                $scope.id = $scope.editCategoryNews.id;
+                $scope.cate_name_news = $scope.editCategoryNews.categoryNameNews;
+                $scope.status = $scope.editCategoryNews.status + "";
+                $scope.orders = $scope.editCategoryNews.orders;
+                let property = $scope.editCategoryNews.property;
+                console.log(property);
+                $scope.hot = property.cateHot;
+                $scope.new = property.cateNew;
+            })
+
+            //Save Data da sua
+            $scope.saveDataEdit = function() {
+                if ($scope.cate_name_news && $scope.status > 0) {
+                    let property = 0;
+                    if ($scope.hot) {
+                        property = property + 1;
+                    }
+                    if ($scope.new) {
+                        property = property + 2;
+                    }
+                    var data = $.param({
+                        id: $scope.id,
+                        cate_name_news: $scope.cate_name_news,
+                        orders: $scope.orders,
+                        status: $scope.status,
+                        property: property,
+                        
+                    });
+
+                    console.log(data);
+                    var config = {
+                        headers: {
+                            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                        }
+                    }
+                    $http.post($scope.APP_DOMAIN + 'admin/api/category_news?action=edit', data, config)
+                        .then(function(response) {
+                            console.log(response);
+                            if (response.data.errorCode < 0) {
+                                showNotification("error", response.data.message);
+                            } else {
+                                showNotification("success", response.data.message);
+                                window.location.replace($scope.APP_DOMAIN + "admin/category_news");
+                            }
+
+                        })
+                } else {
+                    showNotification("error", "Dữ liệu không hợp lệ!");
+                }
+
+            }
+
 
 
        });

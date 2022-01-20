@@ -199,7 +199,7 @@ public class CategoryNewsModel {
         return result;
     }
 
-    public boolean isExistCateNameNews(String cateNameNews) {
+    public boolean isExistCateNameNews(int id, String cateNameNews) {
         Connection conn = null;
         try {
             conn = dbClient.getDbConnection();
@@ -207,10 +207,11 @@ public class CategoryNewsModel {
                 return false;
             }
 
-            PreparedStatement isExistCateNameSlugStmt = conn.prepareStatement("SELECT * FROM `" + NAMETABLE + "` WHERE `cate_name_news` = ? ");
-            isExistCateNameSlugStmt.setString(1, cateNameNews);
+            PreparedStatement isExistCateNewsNameStmt = conn.prepareStatement("SELECT * FROM `" + NAMETABLE + "` WHERE `cate_name_news` = ? AND `id` <> ?");
+            isExistCateNewsNameStmt.setString(1, cateNameNews);
+            isExistCateNewsNameStmt.setInt(2, id);
 
-            ResultSet rs = isExistCateNameSlugStmt.executeQuery();
+            ResultSet rs = isExistCateNewsNameStmt.executeQuery();
             if (rs.next()) {
                 return true;
             }
@@ -227,7 +228,7 @@ public class CategoryNewsModel {
 
     public int addCategoryNews(CategoryNews categoryNews) {
         Connection conn = null;
-        boolean existCateNameNews = INSTANCE.isExistCateNameNews(categoryNews.getCategoryNameNews());
+        boolean existCateNameNews = INSTANCE.isExistCateNameNews(categoryNews.getId(), categoryNews.getCategoryNameNews());
         if (existCateNameNews == true) {
             return ErrorCode.EXIST.getValue();
         }

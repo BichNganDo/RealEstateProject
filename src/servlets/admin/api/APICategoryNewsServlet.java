@@ -100,7 +100,7 @@ public class APICategoryNewsServlet extends HttpServlet {
                 categoryNews.setProperty(property);
                 categoryNews.setStatus(status);
 
-                boolean existCateNameNews = CategoryNewsModel.INSTANCE.isExistCateNameNews(cateNameNews);
+                boolean existCateNameNews = CategoryNewsModel.INSTANCE.isExistCateNameNews(0, cateNameNews);
                 if (existCateNameNews == true) {
                     result.setErrorCode(-4);
                     result.setMessage("Category Name News đã tồn tại");
@@ -117,63 +117,57 @@ public class APICategoryNewsServlet extends HttpServlet {
 
                 break;
             }
-//            case "edit": {
-//                int id = NumberUtils.toInt(request.getParameter("id"));
-//                String cateName = request.getParameter("cate_name");
-//                String cateNameSlug = ServletUtil.toSlug(request.getParameter("cate_name_slug"));
-//                int idParent = NumberUtils.toInt(request.getParameter("id_parent"));
-//                int orders = NumberUtils.toInt(request.getParameter("orders"));
-//                int property = NumberUtils.toInt(request.getParameter("property"));
-//                int status = NumberUtils.toInt(request.getParameter("status"));
-//
-//                Category category = new Category();
-//                category.setId(id);
-//                category.setCateName(cateName);
-//                category.setParentId(idParent);
-//                category.setCateNameSlug(cateNameSlug);
-//                category.setOrders(orders);
-//                category.setProperty(property);
-//                category.setStatus(status);
-//
-//
-//                Category categoryByID = CategoryModel.INSTANCE.getCategoryByID(id);
-//
-//                if (categoryByID.getId() == 0) {
-//                    result.setErrorCode(-1);
-//                    result.setMessage("Thất bại!");
-//                    return;
-//                }
-//
-//                boolean existCateNameSlug = CategoryModel.INSTANCE.isExistCateNameSlug(id, cateNameSlug);
-//                if (existCateNameSlug == true) {
-//                    result.setErrorCode(-4);
-//                    result.setMessage("Category Name Slug đã tồn tại");
-//                } else {
-//                    int editCategory = CategoryModel.INSTANCE.editCategory(category);
-//                    if (editCategory >= 0) {
-//                        result.setErrorCode(0);
-//                        result.setMessage("Sửa category thành công!");
-//                    } else {
-//                        result.setErrorCode(-1);
-//                        result.setMessage("Sửa category thất bại!");
-//                    }
-//                }
-//
-//                break;
-//            }
 
-//            case "delete": {
-//                int id = NumberUtils.toInt(request.getParameter("id"));
-//                int deleteCategory = CategoryModel.INSTANCE.deleteCategory(id);
-//                if (deleteCategory >= 0) {
-//                    result.setErrorCode(0);
-//                    result.setMessage("Xóa category thành công!");
-//                } else {
-//                    result.setErrorCode(-2);
-//                    result.setMessage("Xóa category thất bại!");
-//                }
-//                break;
-//            }
+            case "edit": {
+                int id = NumberUtils.toInt(request.getParameter("id"));
+                String cateNameNews = request.getParameter("cate_name_news");
+                int orders = NumberUtils.toInt(request.getParameter("orders"));
+                int property = NumberUtils.toInt(request.getParameter("property"));
+                int status = NumberUtils.toInt(request.getParameter("status"));
+
+                CategoryNews categoryNews = new CategoryNews();
+                categoryNews.setId(id);
+                categoryNews.setCategoryNameNews(cateNameNews);
+                categoryNews.setCategoryNameNewsSlug(ServletUtil.toSlug(cateNameNews));
+                categoryNews.setOrders(orders);
+                categoryNews.setProperty(property);
+                categoryNews.setStatus(status);
+
+                CategoryNews categoryNewsByID = CategoryNewsModel.INSTANCE.getCategoryNewsByID(id);
+                if (categoryNewsByID.getId() == 0) {
+                    result.setErrorCode(-1);
+                    result.setMessage("Thất bại!");
+                    return;
+                }
+                boolean existCateNameNews = CategoryNewsModel.INSTANCE.isExistCateNameNews(id, cateNameNews);
+                if (existCateNameNews == true) {
+                    result.setErrorCode(-4);
+                    result.setMessage("Category News Name đã tồn tại");
+                } else {
+                    int editCategoryNews = CategoryNewsModel.INSTANCE.editCategoryNews(categoryNews);
+                    if (editCategoryNews >= 0) {
+                        result.setErrorCode(0);
+                        result.setMessage("Sửa category news thành công!");
+                    } else {
+                        result.setErrorCode(-1);
+                        result.setMessage("Sửa category news thất bại!");
+                    }
+                }
+                break;
+            }
+
+            case "delete": {
+                int id = NumberUtils.toInt(request.getParameter("id"));
+                int deleteCategoryNews = CategoryNewsModel.INSTANCE.deleteCategoryNews(id);
+                if (deleteCategoryNews >= 0) {
+                    result.setErrorCode(0);
+                    result.setMessage("Xóa category news thành công!");
+                } else {
+                    result.setErrorCode(-2);
+                    result.setMessage("Xóa category news thất bại!");
+                }
+                break;
+            }
             default:
                 throw new AssertionError();
         }
