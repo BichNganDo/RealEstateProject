@@ -10,6 +10,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import servlets.admin.PartialServlet;
 import servlets.admin.api.APIBannerServlet;
+import servlets.admin.api.APICategoryNewsServlet;
 import servlets.admin.api.APICategoryServlet;
 import servlets.admin.banner.AddBannerServlet;
 import servlets.admin.banner.EditBannerServlet;
@@ -43,6 +44,7 @@ public class Main {
 
         context.addServlet(new ServletHolder(new APICategoryServlet()), "/admin/api/category");
         context.addServlet(new ServletHolder(new APIBannerServlet()), "/admin/api/banner");
+        context.addServlet(new ServletHolder(new APICategoryNewsServlet()), "/admin/api/category_news");
 
 //
 //        FilterHolder authenFilter = new FilterHolder(new AuthenFilter());
