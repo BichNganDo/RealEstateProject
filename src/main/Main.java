@@ -21,6 +21,7 @@ import servlets.admin.cate_news.ManageCategoryNewsServlet;
 import servlets.admin.category.AddCategoryServlet;
 import servlets.admin.category.EditCategoryServlet;
 import servlets.admin.category.ManageCategoryServlet;
+import servlets.admin.news.AddNewsServlet;
 import servlets.admin.news.ManageNewsServlet;
 
 public class Main {
@@ -44,6 +45,7 @@ public class Main {
         context.addServlet(new ServletHolder(new EditCategoryNewsServlet()), "/admin/category_news/edit");
 
         context.addServlet(new ServletHolder(new ManageNewsServlet()), "/admin/news");
+        context.addServlet(new ServletHolder(new AddNewsServlet()), "/admin/news/add");
 
         context.addServlet(new ServletHolder(new APICategoryServlet()), "/admin/api/category");
         context.addServlet(new ServletHolder(new APIBannerServlet()), "/admin/api/banner");
