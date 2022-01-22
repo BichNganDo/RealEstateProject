@@ -66,13 +66,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Category News</label>
-                                    <select ng-model="categoryNews" name="categoryNews" ng-select ="true" ng-required ="true" ng-init="categoryNews='0'" class="form-control">
+                                    <select ng-model="category_news" name="category_news" ng-select ="true" ng-required ="true" ng-init="category_news='0'" class="form-control">
                                         <option value="0">Choose the Category News</option>
-                                        <option value="1">A</option>
-                                        <option value="2">B</option>
-                                        <!-- <option ng-repeat="item in listCategoryNews" value="{{item.id}}">{{item.name}}</option> -->
+                                        <!-- <option value="1">A</option>
+                                        <option value="2">B</option> -->
+                                        <option ng-repeat="item in listCategoryNews" value="{{item.id}}">{{item.categoryNameNews}}</option>
                                     </select>
-                                    <span class="error-msg" ng-show="categoryNews == '0' && !formAddData.categoryNews.$pristine"> Dữ liệu không được để trống!</span>
+                                    <span class="error-msg" ng-show="category_news == '0' && !formAddData.category_news.$pristine"> Dữ liệu không được để trống!</span>
                                 </div>
                                 <div class="form-group">
                                     <label>Title</label>
@@ -174,6 +174,77 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     blah.style = "block";
                 }
             }
+
+            //load CateNews
+            $http({
+                method: "GET",
+                url: $scope.APP_DOMAIN + "admin/api/category_news",
+                params: {
+                    action: 'getcategorynews',
+                    page_index: 1,
+                    limit: 100
+                },
+            }).then(function(response) {
+                console.log(response);
+                $scope.listCategoryNews = response.data.data.listCategoryNews;
+            })
+
+            $scope.addData = function() {
+                var smContent = $('#summernote').summernote('code');
+                if ($scope.category_news && $scope.title && $scope.description && smContent && $scope.filex && $scope.status > 0) {
+                    let property = 0;
+                    if ($scope.hot) {
+                        property = property + 1;
+                    }
+                    if ($scope.new) {
+                        property = property + 2;
+                    }
+
+                    $http({
+                            method: 'POST',
+                            url: $scope.APP_DOMAIN + 'admin/api/news?action=add',
+                            headers: {
+                                'content-type': undefined
+                            },
+                            data: {
+                                category_news: $scope.category_news,
+                                title: $scope.title,
+                                description: $scope.description,
+                                content: smContent,
+                                status: $scope.status,
+                                orders: $scope.orders,
+                                property: property,
+                                image: $scope.filex,
+
+                            },
+
+                            transformRequest: function(data, headersGetter) {
+                                console.log(data);
+                                var formData = new FormData();
+                                angular.forEach(data, function(value, key) {
+                                    formData.append(key, value);
+                                });
+
+                                return formData;
+
+                            }
+                        })
+                        .then(function(response) {
+                            console.log(response);
+                            if (response.data.errorCode < 0) {
+                                showNotification("error", response.data.message);
+                            } else {
+                                showNotification("success", response.data.message);
+                                window.location.replace($scope.APP_DOMAIN + "admin/news");
+                            }
+
+                        })
+                } else {
+                    showNotification("error", "Dữ liệu không hợp lệ!");
+                }
+
+            }
+
 
           
 

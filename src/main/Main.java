@@ -12,6 +12,7 @@ import servlets.admin.PartialServlet;
 import servlets.admin.api.APIBannerServlet;
 import servlets.admin.api.APICategoryNewsServlet;
 import servlets.admin.api.APICategoryServlet;
+import servlets.admin.api.APINewsServlet;
 import servlets.admin.banner.AddBannerServlet;
 import servlets.admin.banner.EditBannerServlet;
 import servlets.admin.banner.ManageBannerServlet;
@@ -22,6 +23,7 @@ import servlets.admin.category.AddCategoryServlet;
 import servlets.admin.category.EditCategoryServlet;
 import servlets.admin.category.ManageCategoryServlet;
 import servlets.admin.news.AddNewsServlet;
+import servlets.admin.news.EditNewsServlet;
 import servlets.admin.news.ManageNewsServlet;
 
 public class Main {
@@ -46,10 +48,12 @@ public class Main {
 
         context.addServlet(new ServletHolder(new ManageNewsServlet()), "/admin/news");
         context.addServlet(new ServletHolder(new AddNewsServlet()), "/admin/news/add");
+        context.addServlet(new ServletHolder(new EditNewsServlet()), "/admin/news/edit");
 
         context.addServlet(new ServletHolder(new APICategoryServlet()), "/admin/api/category");
         context.addServlet(new ServletHolder(new APIBannerServlet()), "/admin/api/banner");
         context.addServlet(new ServletHolder(new APICategoryNewsServlet()), "/admin/api/category_news");
+        context.addServlet(new ServletHolder(new APINewsServlet()), "/admin/api/news");
 
 //
 //        FilterHolder authenFilter = new FilterHolder(new AuthenFilter());

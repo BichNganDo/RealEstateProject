@@ -191,13 +191,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             if (response.data.errorCode < 0) {
                                 showNotification("error", response.data.message);
                             } else {
-                                // $scope.banner_name = "";
-                                // $scope.action = "";
-                                // $("#blah").css("display", "none");
-                                // $('#preImg').val('');
-                                // $scope.position = "0";
-                                // $scope.status = "0";
-                                // $scope.orders="";
                                 showNotification("success", response.data.message);
                                 window.location.replace($scope.APP_DOMAIN + "admin/banner");
                             }
