@@ -53,7 +53,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="input-group">
                                         <input ng-model="search_query" type="text" name="search" class="form-control" placeholder="Search">
                                         <div class="input-group-append">
@@ -62,13 +62,35 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <div class="input-group">
                                         <select ng-model="search_status" ng-change="getListNews()" ng-init="search_status='0'" class="form-control">
                                             <option value="0">Filter status</option>
                                             <option value="1">Show</option>
                                             <option value="2">Hide</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <select ng-model="search_category_news" ng-change="getListNews()" ng-init="search_category_news='0'" class="form-control">
+                                            <option value="0">Filter Category News</option>
+                                            <option ng-repeat="item in listCategoryNews" value="{{item.id}}">{{item.categoryNameNews}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1">
+                                    <div class="form-group" style="margin-top: 8px;">
+                                        <div class="form-check">
+                                            <div style="display: inline-block;padding-right: 30px;">
+                                                <input ng-model="hot" class="form-check-input" type="checkbox" ng-change="getListNews()">
+                                                <label class="form-check-label">Hot</label>
+                                            </div>
+                                            <div style="display: inline-block; ">
+                                                <input ng-model="new" class="form-check-input" type="checkbox" ng-change="getListNews()">
+                                                <label class="form-check-label">New</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 text-right">
@@ -128,28 +150,31 @@
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody dir-paginate="item in listNews | itemsPerPage: 10" total-items="totalNews" pagination-id="news">
                                     <tr>
-                                        <td>1</td>
-                                        <td>Nhà cửa</td>
-                                        <td>Công trình đắt giá nhất hiện nay hội tụ các tiêu chí gì?</td>
-                                        <td>Công trình đắt giá nhất hiện nay hội tụ các tiêu chí gì? Công trình đắt giá nhất hiện nay hội tụ các tiêu chí gì?</td>
+                                        <td>{{item.id}}</td>
+                                        <td>{{item.categoryNewsName}}</td>
+                                        <td>{{item.title}}
+                                            <span ng-if="item.property.cateHot" class="badge badge-danger">Hot</span>
+                                            <span ng-if="item.property.cateNew" class="badge badge-primary">New</span>
+                                        </td>
+                                        <td>{{item.description}}</td>
                                         <td>
-                                            <img width="100%" src="https://inhat.vn/ha-noi/wp-content/uploads/2019/10/cuc-hoa-mi-o-ha-noi-3.jpg" alt="">
+                                            <img width="100%" src="{{item.image}}" alt="">
                                         </td>
                                         <td>
-                                            <span class="badge badge-info">Show</span>
-                                            <!-- <span ng-if="item.status==2" class="badge badge-secondary">Hide</span> -->
+                                            <span ng-if="item.status==1" class="badge badge-info">Show</span>
+                                            <span ng-if="item.status==2" class="badge badge-secondary">Hide</span>
                                         </td>
-                                        <td>1</td>
-                                        <td>01/01/2022</td>
-                                        <td>01/01/2022</td>
+                                        <td>{{item.orders}}</td>
+                                        <td>{{item.createdDate}}</td>
+                                        <td>{{item.updatedDate}}</td>
                                         <td class="project-actions text-right">
-                                            <a class="btn btn-info btn-sm" href="/admin/news/edit" style="margin: 5px 5px">
+                                            <a class="btn btn-info btn-sm" href="/admin/news/edit?id={{item.id}}" style="margin: 5px 5px">
                                                 <i class="fas fa-pencil-alt">
                                                 </i> Edit
                                             </a>
-                                            <a ng-click="delete(item.id, item.bannerName)" class="btn btn-danger btn-sm" href="#" style="margin: 5px 5px">
+                                            <a ng-click="delete(item.id, item.title)" class="btn btn-danger btn-sm" href="#" style="margin: 5px 5px">
                                                 <i class="fas fa-trash">
                                                 </i> Delete
                                             </a>
@@ -158,7 +183,7 @@
                                 </tbody>
                             </table>
                             <div class="clearfix mt-3" style="margin-left: auto; padding-right: 20px;">
-                                <dir-pagination-controls pagination-id="banner" on-page-change="pageChanged(newPageNumber)" boundary-links="true" style="font-size: 13px"></dir-pagination-controls>
+                                <dir-pagination-controls pagination-id="news" on-page-change="pageChanged(newPageNumber)" boundary-links="true" style="font-size: 13px"></dir-pagination-controls>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -188,6 +213,64 @@
             $rootScope.lastUri = urltmp.split('#')[0];
 
             $scope.APP_DOMAIN = "${app_domain}/";
+
+            $scope.selectedPageIndex = 1;
+
+            //load CateNews
+            $http({
+                method: "GET",
+                url: $scope.APP_DOMAIN + "admin/api/category_news",
+                params: {
+                    action: 'getcategorynews',
+                    page_index: 1,
+                    limit: 100
+                },
+            }).then(function(response) {
+                console.log(response);
+                $scope.listCategoryNews = response.data.data.listCategoryNews;
+            })
+
+            $scope.getListNews = function() {
+                let property = 0;
+                if ($scope.hot) {
+                    property = property + 1;
+                }
+                if ($scope.new) {
+                    property = property + 2;
+                }
+                console.log($scope.search_query);
+                console.log($scope.search_status);
+                console.log(property);
+                $http({
+                    method: "GET",
+                    url: $scope.APP_DOMAIN + "admin/api/news",
+                    params: {
+                        action: 'getnews',
+                        page_index: $scope.selectedPageIndex,
+                        limit: 10,
+                        search_query: $scope.search_query,
+                        search_status: $scope.search_status,
+                        search_category_news: $scope.search_category_news,
+                        search_property: property
+                    },
+                }).then(function(response) {
+                    console.log(response);
+                    if (response.data.errorCode >= 0 && response.data.data) {
+                        $scope.listNews = response.data.data.listNews;
+                        $scope.totalNews = response.data.data.total;
+                    } else {
+                        $scope.listNews = [];
+                        $scope.totalNews = 0;
+                    }
+
+                })
+            }
+            $scope.pageChanged = function(pageIndex) {
+                $scope.selectedPageIndex = pageIndex;
+                $scope.getListNews();
+            };
+
+            $scope.getListNews();
 
            
 
