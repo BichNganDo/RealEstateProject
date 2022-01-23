@@ -102,8 +102,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <div class="mb-3">
                                     <label class="mb-2" style="color:black">Image</label><br>
-                                    <input ng-required ="true" type="file" file="filex" name="file2" id="preImg" style="color: black;" accept="image/*" />
-                                    <img id="blah" src="#" class="mt-2" alt="your image" onerror="this.style.display = 'none'" width="150px" style="display: block;" />
+                                    <input accept="image/*" file="filex" name="file2" ng-required ="true" type='file' id="preImg"/>
+                                    <input type="text" value="{{image}}"  name="file" id="preImgOld" style="color: black;" accept="image/*" hidden/>
+                                    <img ng-src="{{image}}" class="mt-2" id="blah" onerror="this.style.display = 'none';" alt="your image" width="150px" style="display: block;" />
                                     <span ng-show="formAddData.image.$invalid && !formAddData.image.$pristine" class="error-msg"> Dữ liệu không được để trống!</span>
                                 </div>
                                 <div class="form-group">
@@ -187,8 +188,107 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 $scope.listCategoryNews = response.data.data.listCategoryNews;
             })
 
+            //get news
+            var id_news = getUrlParameter('id');
+            console.log("id: "+id_news);
+            $http({
+                method: "GET",
+                url: $scope.APP_DOMAIN + "admin/api/news",
+                params: {
+                    action: 'getNewsById',
+                    id_news: id_news
+
+                },
+            }).then(function(response) {
+                console.log("res: " + response.data.data);
+                $scope.editNews = response.data.data;
+                console.log($scope.editNews);
+                $scope.id = $scope.editNews.id;
+                $scope.category_news = $scope.editNews.idCategoryNews + "";
+                $scope.title = $scope.editNews.title;
+                $scope.description = $scope.editNews.description;
+                $scope.status = $scope.editNews.status + "";
+                $scope.orders = $scope.editNews.orders;
+                $scope.image = $scope.editNews.image;
+                let property = $scope.editNews.property;
+                console.log(property);
+                $scope.hot = property.cateHot;
+                $scope.new = property.cateNew;
+
+                $('#summernote').summernote('code', $scope.editNews.content);
+                $('div.note-editable').height(300);
+            })
+
+            $scope.saveDataEdit = function() {
+                var image = $scope.filex
+                var oldImage = document.getElementById("preImgOld").value;
+                var smContent = $('#summernote').summernote('code');
+                console.log($scope.category_news);
+                console.log($scope.title);
+                console.log($scope.description);
+                console.log(smContent);
+                console.log($scope.status);
+                console.log("aaa" + $scope.filex);
+                
+                if ($scope.category_news > 0  && $scope.title && $scope.description && smContent && $scope.status > 0) { // && $scope.filex
+                    let property = 0;
+                    if ($scope.hot) {
+                        property = property + 1;
+                    }
+                    if ($scope.new) {
+                        property = property + 2;
+                    }
+                    $http({
+                        method: 'POST',
+                        url: $scope.APP_DOMAIN + 'admin/api/news?action=edit',
+                        headers: {
+                            'content-type': undefined
+                        },
+                        data: {
+                            id: $scope.id,
+                            category_news: $scope.category_news + "",
+                            title: $scope.title,
+                            description: $scope.description,
+                            content: smContent,
+                            orders: $scope.orders,
+                            status: $scope.status,
+                            property: property,
+                            image: $scope.filex,
+                            old_image: oldImage,
+                        },
+
+                        transformRequest: function(data, headersGetter) {
+                            console.log(data);
+                            var formData = new FormData();
+                            angular.forEach(data, function(value, key) {
+                                formData.append(key, value);
+                            });
+
+                            return formData;
+
+                        }
+                    }).
+                    then(function(response) {
+                        if (response.data.errorCode >= 0) {
+                            showNotification("success", response.data.message);
+                            window.location.replace($scope.APP_DOMAIN + "admin/news");
+                        } else {
+                            showNotification("error", response.data.message);
+                        }
+                    }, function(error) {
+                        showNotification("error", response.data.message);
+
+                    })
+                } else {
+                    showNotification("error", "Dữ liệu không hợp lệ!");
+                }
+
+            }
           
 
+
+
+            
 
         })
     </script>

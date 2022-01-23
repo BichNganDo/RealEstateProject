@@ -22,6 +22,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -181,100 +182,108 @@ public class APINewsServlet extends HttpServlet {
                 break;
             }
 
-//            case "edit": {
-//                try {
-//                    boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-//                    if (isMultipart) {
-//                        Banner banner = new Banner();
-//                        String oldImage = "";
-//                        String newImage = "";
-//                        ServletFileUpload upload = new ServletFileUpload(new DiskFileItemFactory());
-//                        upload.setHeaderEncoding("UTF-8");
-//
-//                        List<FileItem> items = upload.parseRequest(request);
-//                        for (FileItem item : items) {
-//                            if (item.isFormField()) {
-//                                // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
-//                                String fieldname = item.getFieldName();
-//                                String fieldvalue = item.getString("UTF-8");
-//
-//                                switch (fieldname) {
-//                                    case "id": {
-//                                        banner.setId(NumberUtils.toInt(fieldvalue));
-//                                        break;
-//                                    }
-//                                    case "banner_name": {
-//                                        banner.setBannerName(fieldvalue);
-//                                        break;
-//                                    }
-//                                    case "action": {
-//                                        banner.setAction(fieldvalue);
-//                                        break;
-//                                    }
-//                                    case "position": {
-//                                        banner.setPosition(NumberUtils.toInt(fieldvalue));
-//                                        break;
-//                                    }
-//                                    case "status": {
-//                                        banner.setStatus(NumberUtils.toInt(fieldvalue));
-//                                        break;
-//                                    }
-//                                    case "orders": {
-//                                        banner.setOrders(NumberUtils.toInt(fieldvalue));
-//                                        break;
-//                                    }
-//                                    case "old_image": {
-//                                        oldImage = fieldvalue;
-//                                        break;
-//                                    }
-//
-//                                }
-//
-//                            } else {
-//                                // Process form file field (input type="file").
-//                                String filename = FilenameUtils.getName(item.getName());
-//                                InputStream a = item.getInputStream();
-//                                Path uploadDir = Paths.get("upload/banner/" + filename);
-//                                Files.copy(a, uploadDir, StandardCopyOption.REPLACE_EXISTING);
-//                                newImage = "upload/banner/" + filename;
-//                            }
-//                        }
-//
-//                        if (StringUtils.isNotEmpty(newImage)) {
-//                            banner.setImage(newImage);
-//                        } else {
-//                            banner.setImage(oldImage);
-//                        }
-//                        Banner bannerByID = BannerModel.INSTANCE.getBannerByID(banner.getId());
-//                        if (bannerByID.getId() == 0) {
-//                            result.setErrorCode(-1);
-//                            result.setMessage("Thất bại");
-//                            return;
-//                        }
-//                        boolean existBannerName = BannerModel.INSTANCE.isExistBannerName(banner.getId(), banner.getBannerName());
-//                        if (existBannerName == true) {
-//                            result.setErrorCode(-4);
-//                            result.setMessage("Banner Name đã tồn tại");
-//                        } else {
-//                            int editBanner = BannerModel.INSTANCE.editBanner(banner);
-//                            if (editBanner >= 0) {
-//                                result.setErrorCode(0);
-//                                result.setMessage("Sửa banner thành công!");
-//                            } else {
-//                                result.setErrorCode(-1);
-//                                result.setMessage("Sửa banner thất bại!");
-//                            }
-//                        }
-//                    } else {
-//                        result.setErrorCode(-4);
-//                        result.setMessage("Có lỗi");
-//                    }
-//
-//                } catch (Exception e) {
-//                    System.out.println(e.getMessage());
-//                }
-//                break;
-//            }
+            case "edit": {
+                try {
+                    boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+                    if (isMultipart) {
+                        News news = new News();
+                        String oldImage = "";
+                        String newImage = "";
+                        ServletFileUpload upload = new ServletFileUpload(new DiskFileItemFactory());
+                        upload.setHeaderEncoding("UTF-8");
+
+                        List<FileItem> items = upload.parseRequest(request);
+                        for (FileItem item : items) {
+                            if (item.isFormField()) {
+                                // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
+                                String fieldname = item.getFieldName();
+                                String fieldvalue = item.getString("UTF-8");
+
+                                switch (fieldname) {
+                                    case "id": {
+                                        news.setId(NumberUtils.toInt(fieldvalue));
+                                        break;
+                                    }
+                                    case "category_news": {
+                                        news.setIdCategoryNews(NumberUtils.toInt(fieldvalue));
+                                        break;
+                                    }
+                                    case "title": {
+                                        news.setTitle(fieldvalue);
+                                        break;
+                                    }
+                                    case "description": {
+                                        news.setDescription(fieldvalue);
+                                        break;
+                                    }
+                                    case "content": {
+                                        news.setContent(fieldvalue);
+                                        break;
+                                    }
+                                    case "status": {
+                                        news.setStatus(NumberUtils.toInt(fieldvalue));
+                                        break;
+                                    }
+                                    case "orders": {
+                                        news.setOrders(NumberUtils.toInt(fieldvalue));
+                                        break;
+                                    }
+                                    case "property": {
+                                        news.setProperty(NumberUtils.toInt(fieldvalue));
+                                        break;
+                                    }
+                                    case "old_image": {
+                                        oldImage = fieldvalue;
+                                        break;
+                                    }
+
+                                }
+
+                            } else {
+                                // Process form file field (input type="file").
+                                String filename = FilenameUtils.getName(item.getName());
+                                InputStream a = item.getInputStream();
+                                Path uploadDir = Paths.get("upload/news/" + filename);
+                                Files.copy(a, uploadDir, StandardCopyOption.REPLACE_EXISTING);
+                                newImage = "upload/news/" + filename;
+                            }
+                        }
+
+                        if (StringUtils.isNotEmpty(newImage)) {
+                            news.setImage(newImage);
+                        } else {
+                            news.setImage(oldImage);
+                        }
+                        News newsByID = NewsModel.INSTANCE.getNewsByID(news.getId());
+                        if (newsByID.getId() == 0) {
+                            result.setErrorCode(-1);
+                            result.setMessage("Thất bại");
+                            return;
+                        }
+                        boolean existTitle = NewsModel.INSTANCE.isExistTitle(news.getId(), news.getTitle());
+                        if (existTitle == true) {
+                            result.setErrorCode(-4);
+                            result.setMessage("Title đã tồn tại");
+                        } else {
+                            int editNews = NewsModel.INSTANCE.editNews(news);
+                            if (editNews >= 0) {
+                                result.setErrorCode(0);
+                                result.setMessage("Sửa news thành công!");
+                            } else {
+                                result.setErrorCode(-1);
+                                result.setMessage("Sửa news thất bại!");
+                            }
+                        }
+                    } else {
+                        result.setErrorCode(-4);
+                        result.setMessage("Có lỗi");
+                    }
+
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+                break;
+            }
 
 //            case "delete": {
 //                int id = NumberUtils.toInt(request.getParameter("id"));

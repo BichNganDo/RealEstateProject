@@ -191,7 +191,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             $scope.addData = function() {
                 var smContent = $('#summernote').summernote('code');
-                if ($scope.category_news && $scope.title && $scope.description && smContent && $scope.filex && $scope.status > 0) {
+                if ($scope.category_news > 0 && $scope.title && $scope.description && smContent && $scope.filex && $scope.status > 0) {
                     let property = 0;
                     if ($scope.hot) {
                         property = property + 1;

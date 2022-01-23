@@ -189,11 +189,11 @@ public class NewsModel {
             ResultSet rs = getNewsByIdStmt.executeQuery();
 
             if (rs.next()) {
+                result.setId(rs.getInt("id"));
                 result.setTitle(rs.getString("title"));
                 result.setDescription(rs.getString("description"));
                 result.setContent(rs.getString("content"));
                 result.setIdCategoryNews(rs.getInt("id_cate_news"));
-                result.setCategoryNewsName(rs.getString("category_news"));
                 result.setImageUrlWithBaseDomain(rs.getString("image"));
                 result.setStatus(rs.getInt("status"));
                 result.setProperty(rs.getInt("property"));
