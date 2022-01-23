@@ -285,18 +285,18 @@ public class APINewsServlet extends HttpServlet {
                 break;
             }
 
-//            case "delete": {
-//                int id = NumberUtils.toInt(request.getParameter("id"));
-//                int deleteBanner = BannerModel.INSTANCE.deleteBanner(id);
-//                if (deleteBanner >= 0) {
-//                    result.setErrorCode(0);
-//                    result.setMessage("Xóa banner thành công1");
-//                } else {
-//                    result.setErrorCode(-2);
-//                    result.setMessage("Xóa banner thất bại!");
-//                }
-//                break;
-//            }
+            case "delete": {
+                int id = NumberUtils.toInt(request.getParameter("id"));
+                int deleteNews = NewsModel.INSTANCE.deleteNews(id);
+                if (deleteNews >= 0) {
+                    result.setErrorCode(0);
+                    result.setMessage("Xóa news thành công1");
+                } else {
+                    result.setErrorCode(-2);
+                    result.setMessage("Xóa news thất bại!");
+                }
+                break;
+            }
             default:
                 throw new AssertionError();
         }
