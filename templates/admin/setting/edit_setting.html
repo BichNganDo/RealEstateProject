@@ -117,6 +117,63 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $rootScope.lastUri = urltmp.split('#')[0];
 
             $scope.APP_DOMAIN = "${app_domain}/";
+
+             // get idsetting
+             var id_setting = getUrlParameter('id');
+            console.log("id: " + id_setting);
+
+            $http({
+                method: "GET",
+                url: $scope.APP_DOMAIN + "admin/api/setting",
+                params: {
+                    action: 'getSettingById',
+                    id_setting: id_setting
+                },
+            }).then(function(response) {
+                $scope.editSetting = response.data.data
+                console.log($scope.editSetting);
+
+                $scope.id = $scope.editSetting.id;
+                $scope.key = $scope.editSetting.key;
+                $scope.value = $scope.editSetting.value;
+                $scope.status = $scope.editSetting.status + "";
+                $scope.group = $scope.editSetting.group;
+            })
+
+            //Save Data da sua
+            $scope.saveDataEdit = function() {
+                if ($scope.key && $scope.value && $scope.status > 0) {
+                    var data = $.param({
+                        id: $scope.id,
+                        key: $scope.key,
+                        value: $scope.value,
+                        group: $scope.group,
+                        status: $scope.status,
+                    });
+
+                    console.log(data);
+                    var config = {
+                        headers: {
+                            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                        }
+                    }
+                    $http.post($scope.APP_DOMAIN + 'admin/api/setting?action=edit', data, config)
+                        .then(function(response) {
+                            console.log(response);
+                            if (response.data.errorCode < 0) {
+                                showNotification("error", response.data.message);
+                            } else {
+                                showNotification("success", response.data.message);
+                                window.location.replace($scope.APP_DOMAIN + "admin/setting");
+                            }
+
+                        })
+                } else {
+                    showNotification("error", "Dữ liệu không hợp lệ!");
+                }
+
+            }
+
             
 
 

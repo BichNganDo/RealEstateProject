@@ -114,62 +114,57 @@ public class APISettingServlet extends HttpServlet {
                 }
                 break;
             }
-//            case "edit": {
-//                int id = NumberUtils.toInt(request.getParameter("id"));
-//                String cateName = request.getParameter("cate_name");
-//                String cateNameSlug = ServletUtil.toSlug(request.getParameter("cate_name_slug"));
-//                int idParent = NumberUtils.toInt(request.getParameter("id_parent"));
-//                int orders = NumberUtils.toInt(request.getParameter("orders"));
-//                int property = NumberUtils.toInt(request.getParameter("property"));
-//                int status = NumberUtils.toInt(request.getParameter("status"));
-//
-//                Category category = new Category();
-//                category.setId(id);
-//                category.setCateName(cateName);
-//                category.setParentId(idParent);
-//                category.setCateNameSlug(cateNameSlug);
-//                category.setOrders(orders);
-//                category.setProperty(property);
-//                category.setStatus(status);
-//
-//                Category categoryByID = CategoryModel.INSTANCE.getCategoryByID(id);
-//
-//                if (categoryByID.getId() == 0) {
-//                    result.setErrorCode(-1);
-//                    result.setMessage("Thất bại!");
-//                    return;
-//                }
-//
-//                boolean existCateNameSlug = CategoryModel.INSTANCE.isExistCateNameSlug(id, cateNameSlug);
-//                if (existCateNameSlug == true) {
-//                    result.setErrorCode(-4);
-//                    result.setMessage("Category Name Slug đã tồn tại");
-//                } else {
-//                    int editCategory = CategoryModel.INSTANCE.editCategory(category);
-//                    if (editCategory >= 0) {
-//                        result.setErrorCode(0);
-//                        result.setMessage("Sửa category thành công!");
-//                    } else {
-//                        result.setErrorCode(-1);
-//                        result.setMessage("Sửa category thất bại!");
-//                    }
-//                }
-//
-//                break;
-//            }
+            case "edit": {
+                int id = NumberUtils.toInt(request.getParameter("id"));
+                String key = request.getParameter("key");
+                String value = request.getParameter("value");
+                int status = NumberUtils.toInt(request.getParameter("status"));
+                String group = request.getParameter("group");
 
-//            case "delete": {
-//                int id = NumberUtils.toInt(request.getParameter("id"));
-//                int deleteCategory = CategoryModel.INSTANCE.deleteCategory(id);
-//                if (deleteCategory >= 0) {
-//                    result.setErrorCode(0);
-//                    result.setMessage("Xóa category thành công!");
-//                } else {
-//                    result.setErrorCode(-2);
-//                    result.setMessage("Xóa category thất bại!");
-//                }
-//                break;
-//            }
+                Setting setting = new Setting();
+                setting.setId(id);
+                setting.setKey(key);
+                setting.setValue(value);
+                setting.setGroup(group);
+                setting.setStatus(status);
+
+                Setting settingByID = SettingModel.INSTANCE.getSettingByID(id);
+                if (settingByID.getId() == 0) {
+                    result.setErrorCode(-1);
+                    result.setMessage("Thất bại!");
+                    return;
+                }
+
+                boolean existKey = SettingModel.INSTANCE.isExistKey(id, key);
+                if (existKey == true) {
+                    result.setErrorCode(-4);
+                    result.setMessage("Key đã tồn tại");
+                } else {
+                    int editSetting = SettingModel.INSTANCE.editSetting(setting);
+                    if (editSetting >= 0) {
+                        result.setErrorCode(0);
+                        result.setMessage("Sửa setting thành công!");
+                    } else {
+                        result.setErrorCode(-1);
+                        result.setMessage("Sửa setting thất bại!");
+                    }
+                }
+
+                break;
+            }
+
+            case "delete": {
+                int id = NumberUtils.toInt(request.getParameter("id"));
+                int deleteSetting = SettingModel.INSTANCE.deleteSetting(id);
+                if (deleteSetting >= 0) {
+                    result.setErrorCode(0);
+                    result.setMessage("Xóa setting thành công!");
+                } else {
+                    result.setErrorCode(-2);
+                    result.setMessage("Xóa setting thất bại!");
+                }
+                break;
+            }
             default:
                 throw new AssertionError();
         }

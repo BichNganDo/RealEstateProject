@@ -210,6 +210,30 @@
 
         $scope.getListSetting();
 
+         //DELETE
+         $scope.delete = function(idDel, nameDel) {
+                var r = confirm("Bạn chắc chắn muốn xóa " + nameDel + " ?");
+                if (r == true) {
+                    var data = $.param({
+                        id: idDel
+                    });
+                    var config = {
+                        headers: {
+                            'content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                        }
+                    }
+                    $http.post('${app_domain}/admin/api/setting?action=delete', data, config)
+                        .then(function(response) {
+                            // console.log(response);
+                            showNotification("success", response.data.message);
+                            $scope.getListSetting();
+                        }, function(error) {
+                            // console.log(error.data.message);
+                            showNotification("error", error.data.message);
+                        })
+                }
+            }
+
 
 
     });
