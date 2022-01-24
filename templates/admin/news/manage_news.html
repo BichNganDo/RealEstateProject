@@ -241,6 +241,8 @@
                 console.log($scope.search_query);
                 console.log($scope.search_status);
                 console.log(property);
+                console.log("Hot: " + $scope.hot);
+                console.log("New: " + $scope.new);
                 $http({
                     method: "GET",
                     url: $scope.APP_DOMAIN + "admin/api/news",

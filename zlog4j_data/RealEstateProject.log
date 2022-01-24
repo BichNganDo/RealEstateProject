@@ -1,0 +1,84 @@
+2022-01-23 16:21:22 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-23 16:21:22 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-23 16:21:22 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/banner/manage_banner.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:21:22 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/banner/manage_banner.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/banner/manage_banner.html"
+2022-01-23 16:21:22 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-23 16:21:32 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-23 16:21:32 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-23 16:21:32 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/banner/add_banner.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:21:32 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/banner/add_banner.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/banner/add_banner.html"
+2022-01-23 16:21:32 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:21:32 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:21:32 DEBUG cache:83 - "templates/admin/banner/add_banner.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:21:32 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-23 16:21:39 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-23 16:21:39 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-23 16:21:39 DEBUG cache:83 - "templates/admin/banner/add_banner.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/banner/add_banner.html didn't change.
+2022-01-23 16:21:39 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:21:39 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:21:39 DEBUG cache:83 - "templates/admin/banner/add_banner.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:21:39 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-23 16:24:25 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/header.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:24:25 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/header.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/header.html"
+2022-01-23 16:24:25 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/footer.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:24:25 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/footer.html"
+2022-01-23 16:24:25 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/manage_category.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:24:25 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-23 16:24:25 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/menu.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:24:25 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/menu.html"
+2022-01-23 16:24:27 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:24:27 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:24:27 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/edit_category.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:24:27 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-23 16:24:28 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:24:29 INFO  CategoryModel:355 - editCategory - Success | Sql: com.mysql.jdbc.JDBC42PreparedStatement@675386c7: UPDATE `category` SET id_parent = 9, cate_name = 'Ngân', cate_name_slug = 'ngan', status = 1, property = 0, orders = 0, updated_date = '1642929869458' WHERE id = 11
+2022-01-23 16:24:29 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:24:29 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:24:29 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:24:29 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:26:01 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-23 16:26:01 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-23 16:26:01 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-23 16:26:01 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-23 16:26:02 INFO  CategoryModel:355 - editCategory - Success | Sql: com.mysql.jdbc.JDBC42PreparedStatement@61be5a69: UPDATE `category` SET id_parent = 9, cate_name = 'Ngân', cate_name_slug = 'ngan', status = 1, property = 0, orders = 0, updated_date = '1642929962914' WHERE id = 11
+2022-01-23 16:26:02 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:26:02 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:26:02 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-23 16:26:03 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:26:06 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-23 16:26:06 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-23 16:26:06 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-23 16:26:06 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-23 16:26:07 INFO  CategoryModel:355 - editCategory - Success | Sql: com.mysql.jdbc.JDBC42PreparedStatement@26ab35c1: UPDATE `category` SET id_parent = 0, cate_name = 'Dự án', cate_name_slug = 'du-an', status = 2, property = 2, orders = 0, updated_date = '1642929967977' WHERE id = 10
+2022-01-23 16:26:08 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:26:08 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:26:08 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-23 16:26:08 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:27:08 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/header.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:27:08 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/header.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/header.html"
+2022-01-23 16:27:08 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/footer.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:27:08 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/footer.html"
+2022-01-23 16:27:08 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/manage_category.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:27:08 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html"
+2022-01-23 16:27:08 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/include/menu.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:27:08 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/include/menu.html"
+2022-01-23 16:27:10 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:27:10 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:27:10 DEBUG cache:83 - Could not find template in cache, creating new one; id=["templates/admin/category/edit_category.html"["en_US",UTF-8,parsed] ]
+2022-01-23 16:27:10 DEBUG cache:83 - Compiling FreeMarker template "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  from "/home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html"
+2022-01-23 16:27:10 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:27:11 INFO  CategoryModel:355 - editCategory - Success | Sql: com.mysql.jdbc.JDBC42PreparedStatement@6fef345d: UPDATE `category` SET id_parent = 0, cate_name = 'Dự án', cate_name_slug = 'du-an', status = 2, property = 2, orders = 0, updated_date = '1642930031494' WHERE id = 10
+2022-01-23 16:27:11 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:27:11 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:27:11 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:27:11 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:27:15 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/header.html didn't change.
+2022-01-23 16:27:15 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/footer.html didn't change.
+2022-01-23 16:27:15 DEBUG cache:83 - "templates/admin/category/edit_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/edit_category.html didn't change.
+2022-01-23 16:27:15 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/include/menu.html didn't change.
+2022-01-23 16:27:16 INFO  CategoryModel:355 - editCategory - Success | Sql: com.mysql.jdbc.JDBC42PreparedStatement@56c3961: UPDATE `category` SET id_parent = 0, cate_name = 'Dự án', cate_name_slug = 'du-an', status = 2, property = 2, orders = 0, updated_date = '1642930036799' WHERE id = 10
+2022-01-23 16:27:16 DEBUG cache:83 - "templates/admin/include/header.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:27:16 DEBUG cache:83 - "templates/admin/include/footer.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:27:16 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
+2022-01-23 16:27:17 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
+2022-01-23 16:28:10 INFO  CategoryModel:355 - editCategory - Success | Sql: com.mysql.jdbc.JDBC42PreparedStatement@66c5629c: UPDATE `category` SET id_parent = 0, cate_name = 'Dự án', cate_name_slug = 'du-an', status = 2, property = 2, orders = 0, updated_date = '1642930090824' WHERE id = 10

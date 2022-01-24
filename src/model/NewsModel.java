@@ -81,6 +81,7 @@ public class NewsModel {
             ps.setInt(param++, filterNews.getOffset());
             ResultSet rs = ps.executeQuery();
 
+            System.out.println(ps);
             while (rs.next()) {
                 News news = new News();
 

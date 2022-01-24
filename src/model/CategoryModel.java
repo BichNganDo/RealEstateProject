@@ -351,7 +351,11 @@ public class CategoryModel {
             editStmt.setInt(8, category.getId());
 
             int rs = editStmt.executeUpdate();
-
+            if (rs >= 0) {
+                logger.info("editCategory - Success | Sql: " + editStmt);
+            } else {
+                logger.error("editCategory - Fail | Sql: " + editStmt);
+            }
             return rs;
         } catch (Exception e) {
             logger.error(e.getMessage());

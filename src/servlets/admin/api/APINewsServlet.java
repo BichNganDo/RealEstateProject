@@ -55,7 +55,7 @@ public class APINewsServlet extends HttpServlet {
                 filterNews.setOffset(offset);
                 filterNews.setSearchQuery(searchQuery);
                 filterNews.setStatus(searchStatus);
-                filterNews.setSearchProperty(searchStatus);
+                filterNews.setSearchProperty(searchProperty);
                 filterNews.setSearchCategoryNews(searchCategoryNews);
 
                 List<News> sliceNews = NewsModel.INSTANCE.getSliceNews(filterNews);
@@ -280,7 +280,7 @@ public class APINewsServlet extends HttpServlet {
                     }
 
                 } catch (Exception e) {
-                    System.out.println(e.getMessage());
+                    logger.error(e.getMessage());
                 }
                 break;
             }
