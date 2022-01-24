@@ -5,7 +5,6 @@ import common.APIResult;
 import entity.category.Category;
 import entity.category.FilterCategory;
 import entity.category.ListCategory;
-import freemarker.template.utility.StringUtil;
 import helper.ServletUtil;
 import java.io.IOException;
 import java.util.List;

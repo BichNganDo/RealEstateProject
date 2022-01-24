@@ -82,3 +82,4 @@
 2022-01-23 16:27:16 DEBUG cache:83 - "templates/admin/category/manage_category.html"["en_US",UTF-8,parsed]  using cached since /home/ngan/Code/RealEstateProject/templates/admin/category/manage_category.html didn't change.
 2022-01-23 16:27:17 DEBUG cache:83 - "templates/admin/include/menu.html"["en_US",UTF-8,parsed]  cached copy not yet stale; using cached.
 2022-01-23 16:28:10 INFO  CategoryModel:355 - editCategory - Success | Sql: com.mysql.jdbc.JDBC42PreparedStatement@66c5629c: UPDATE `category` SET id_parent = 0, cate_name = 'Dự án', cate_name_slug = 'du-an', status = 2, property = 2, orders = 0, updated_date = '1642930090824' WHERE id = 10
+2022-01-24 20:22:58 ERROR SettingModel:280 - No value specified for parameter 3

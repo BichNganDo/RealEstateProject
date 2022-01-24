@@ -4,8 +4,6 @@ import client.MysqlClient;
 import common.ErrorCode;
 import entity.banner.Banner;
 import entity.banner.FilterBanner;
-import entity.category.Category;
-import entity.category.FilterCategory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -13,6 +13,7 @@ import servlets.admin.api.APIBannerServlet;
 import servlets.admin.api.APICategoryNewsServlet;
 import servlets.admin.api.APICategoryServlet;
 import servlets.admin.api.APINewsServlet;
+import servlets.admin.api.APISettingServlet;
 import servlets.admin.banner.AddBannerServlet;
 import servlets.admin.banner.EditBannerServlet;
 import servlets.admin.banner.ManageBannerServlet;
@@ -61,6 +62,7 @@ public class Main {
         context.addServlet(new ServletHolder(new APIBannerServlet()), "/admin/api/banner");
         context.addServlet(new ServletHolder(new APICategoryNewsServlet()), "/admin/api/category_news");
         context.addServlet(new ServletHolder(new APINewsServlet()), "/admin/api/news");
+        context.addServlet(new ServletHolder(new APISettingServlet()), "/admin/api/setting");
 
 //
 //        FilterHolder authenFilter = new FilterHolder(new AuthenFilter());

@@ -122,24 +122,24 @@
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody dir-paginate="item in listSettings | itemsPerPage: 10" total-items="totalSetting" pagination-id="setting">
                                     <tr>
-                                        <td>1</td>
-                                        <td>Giới thiệu công ty</td>
-                                        <td>Hơn 1 ngày trôi qua, dư âm của siêu đám cưới vẫn chưa hề hạ nhiệt. Bởi lẽ siêu hôn lễ của cặp đôi mới Park Shin Hye - Choi Tae Joon có quá nhiều điều hiếm có và những cái nhất trong showbiz mùa dịch.</td>
+                                        <td>{{item.id}}</td>
+                                        <td>{{item.key}}</td>
+                                        <td>{{item.value}}</td>
                                         <td>
-                                            <span class="badge badge-info">Show</span>
-                                            <!-- <span ng-if="item.status==2" class="badge badge-secondary">Hide</span> -->
+                                            <span ng-if="item.status==1" class="badge badge-info">Show</span>
+                                            <span ng-if="item.status==2" class="badge badge-secondary">Hide</span>
                                         </td>
-                                        <td>Tổng quan</td>
-                                        <td>01/01/2022</td>
-                                        <td>01/01/2022</td>
+                                        <td>{{item.group}}</td>
+                                        <td>{{item.createdDate}}</td>
+                                        <td>{{item.updatedDate}}</td>
                                         <td class="project-actions text-right">
-                                            <a class="btn btn-info btn-sm" href="/admin/setting/edit" style="margin: 5px 5px">
+                                            <a class="btn btn-info btn-sm" href="/admin/setting/edit?id={{item.id}}" style="margin: 5px 5px">
                                                 <i class="fas fa-pencil-alt">
                                                 </i> Edit
                                             </a>
-                                            <a ng-click="delete(item.id, item.cateName)" class="btn btn-danger btn-sm" href="#" style="margin: 5px 5px">
+                                            <a ng-click="delete(item.id, item.key)" class="btn btn-danger btn-sm" href="#" style="margin: 5px 5px">
                                                 <i class="fas fa-trash">
                                                 </i> Delete
                                             </a>
@@ -148,7 +148,7 @@
                                 </tbody>
                             </table>
                             <div class="clearfix mt-3" style="margin-left: auto; padding-right: 20px;">
-                                <dir-pagination-controls pagination-id="category" on-page-change="pageChanged(newPageNumber)" boundary-links="true" style="font-size: 13px"></dir-pagination-controls>
+                                <dir-pagination-controls pagination-id="setting" on-page-change="pageChanged(newPageNumber)" boundary-links="true" style="font-size: 13px"></dir-pagination-controls>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -177,6 +177,38 @@
         $rootScope.lastUri = urltmp.split('#')[0];
 
         $scope.APP_DOMAIN = "${app_domain}/";
+        $scope.selectedPageIndex = 1;
+
+        $scope.getListSetting = function() {
+           
+            $http({
+                method: "GET",
+                url: $scope.APP_DOMAIN + "admin/api/setting",
+                params: {
+                    action: 'getsetting',
+                    page_index: $scope.selectedPageIndex,
+                    limit: 10,
+                    search_query: $scope.search_query,
+                    search_status: $scope.search_status,
+                },
+            }).then(function(response) {
+                console.log(response);
+                if (response.data.errorCode >= 0 && response.data.data) {
+                    $scope.listSettings = response.data.data.listSettings;
+                    $scope.totalSetting = response.data.data.total;
+                } else {
+                    $scope.listCategory = [];
+                    $scope.totalSetting = 0;
+                }
+
+            })
+        }
+        $scope.pageChanged = function(pageIndex) {
+            $scope.selectedPageIndex = pageIndex;
+            $scope.getListSetting();
+        };
+
+        $scope.getListSetting();
 
 
 
