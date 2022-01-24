@@ -50,50 +50,35 @@
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
-                    <!-- <div class="card">
+                    <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-5">
+                                <div class="col-sm-6">
                                     <div class="input-group">
                                         <input ng-model="search_query" type="text" name="search" class="form-control" placeholder="Search">
                                         <div class="input-group-append">
-                                            <button ng-click="getListCategory()" type="button" class="btn btn-primary"><i class="fas fa-search"> Search</i>
+                                            <button ng-click="getListSetting()" type="button" class="btn btn-primary"><i class="fas fa-search"> Search</i>
                                               </button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="input-group">
-                                        <select ng-model="search_status" ng-change="getListCategory()" ng-init="search_status='0'" class="form-control">
+                                        <select ng-model="search_status" ng-change="getListSetting()" ng-init="search_status='0'" class="form-control">
                                             <option value="0">Filter status</option>
                                             <option value="1">Show</option>
                                             <option value="2">Hide</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-1">
-                                    <div class="form-group" style="margin-top: 8px;">
-                                        <div class="form-check">
-                                            <div style="display: inline-block;padding-right: 30px;">
-                                                <input ng-model="hot" class="form-check-input" type="checkbox" ng-change="getListCategory()">
-                                                <label class="form-check-label">Hot</label>
-                                            </div>
-                                            <div style="display: inline-block; ">
-                                                <input ng-model="new" class="form-check-input" type="checkbox" ng-change="getListCategory()">
-                                                <label class="form-check-label">New</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="col-sm-2 text-right">
-                                    <a class="btn btn-primary" href="/admin/category/add">
-                                        <i class="fas fa-plus"></i> Add Category
+                                    <a class="btn btn-primary" href="/admin/setting/add">
+                                        <i class="fas fa-plus"></i> Add Setting
                                     </a>
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <div class="card">
                         <div class="card-header">
@@ -117,7 +102,7 @@
                                         <th style="width: 12%">
                                             Key
                                         </th>
-                                        <th style="width: 17%">
+                                        <th style="width: 25%">
                                             Value
                                         </th>
                                         <th style="width: 7%">
@@ -150,7 +135,7 @@
                                         <td>01/01/2022</td>
                                         <td>01/01/2022</td>
                                         <td class="project-actions text-right">
-                                            <a class="btn btn-info btn-sm" href="/admin/category/edit?id={{item.id}}" style="margin: 5px 5px">
+                                            <a class="btn btn-info btn-sm" href="/admin/category/edit" style="margin: 5px 5px">
                                                 <i class="fas fa-pencil-alt">
                                                 </i> Edit
                                             </a>
@@ -184,6 +169,19 @@
 
     <!-- REQUIRED SCRIPTS -->
     ${footer_include}
+    <script>
+    var app = angular.module('myApp', ['ngPagination']); //ngPagination
+    app.controller('mainCtrl', function($scope, $http, $rootScope) {
+        var url = document.URL.split('/');
+        var urltmp = url[4].split('?')[0];
+        $rootScope.lastUri = urltmp.split('#')[0];
+
+        $scope.APP_DOMAIN = "${app_domain}/";
+
+
+
+    });
+    </script>
 
 </body>
 
